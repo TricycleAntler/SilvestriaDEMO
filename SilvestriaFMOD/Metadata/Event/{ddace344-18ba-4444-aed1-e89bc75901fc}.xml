@@ -178,6 +178,9 @@
 		<property name="maximumTimeBetweenSounds">
 			<value>300000</value>
 		</property>
+		<property name="spawnRate">
+			<value>58</value>
+		</property>
 		<property name="maximumScatterDistance">
 			<value>5</value>
 		</property>
