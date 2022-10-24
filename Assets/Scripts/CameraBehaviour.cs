@@ -6,17 +6,53 @@ public class CameraBehaviour : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
-    public GameObject Rotationtarget;
+    public GameObject targetObject;
+    private float targetAngle = 0;
+    const float rotationAmount = 1.5f;
+    public float rotationDistance = 1.0f;
+    public float rotationSpeed = 1.0f;
 
     // Update is called once per frame
     void Update()
+
+
     {
         transform.position = target.position + offset;
 
-        if (Input.GetKey ("e"))
+        if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.RotateAround(Rotationtarget.transform.position, Vector3.up, 20 * Time.deltaTime);
+            targetAngle -= 90.0f;
+        }
+
+        else if (Input.GetKeyDown("e") || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            targetAngle += 90.0f;
+        }
+
+        if (targetAngle != 0)
+        {
+            Rotate();
         }
     }
 
+    protected void Rotate()
+    {
+
+        float step = rotationSpeed * Time.deltaTime;
+        float orbitCircumfrance = 2F * rotationDistance * Mathf.PI;
+        float distanceDegrees = (rotationSpeed / orbitCircumfrance) * 360;
+        float distanceRadians = (rotationSpeed / orbitCircumfrance) * 2 * Mathf.PI;
+
+        if (targetAngle > 0)
+        {
+            transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
+            targetAngle -= rotationAmount;
+        }
+        else if (targetAngle < 0)
+        {
+            transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
+            targetAngle += rotationAmount;
+        }
+
+    }
 }
