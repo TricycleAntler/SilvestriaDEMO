@@ -2,8 +2,9 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{2ddc75f1-844f-4c80-9cf9-09eab356e318}">
 		<property name="builtBanksOutputDirectory">
-			<value>../../Documents/GitHub/Silvestria/Assets/Audio/FMODbanks.</value>
+			<value>.</value>
 		</property>
+		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{757596e6-871b-4fd7-91f8-2ac4b90486d9}</destination>
 		</relationship>
@@ -33,6 +34,9 @@
 		</relationship>
 		<relationship name="platforms">
 			<destination>{068a400a-430f-45d5-9ba7-d4c2cb29df5a}</destination>
+		</relationship>
+		<relationship name="locales">
+			<destination>{2baa0ef9-387f-499b-accc-e06a55ad6302}</destination>
 		</relationship>
 	</object>
 </objects>

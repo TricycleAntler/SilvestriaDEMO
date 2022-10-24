@@ -5,7 +5,7 @@
 			<value>BIRD_Blackbird</value>
 		</property>
 		<property name="outputFormat">
-			<value>5</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0b6580be-f539-4c65-8f84-a1cced599f00}</destination>
