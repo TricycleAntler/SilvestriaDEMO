@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 106566673}
   m_Layer: 3
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -370,7 +370,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106566672}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 950874a5f94c8d3449fe22fb0bd23462, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 3b8b3850ff4e2b34883948ad1cb5826b, type: 2}
   m_EnableTreeColliders: 1
@@ -2160,7 +2160,6 @@ GameObject:
   - component: {fileID: 1916545403}
   - component: {fileID: 1916545404}
   - component: {fileID: 1916545405}
-  - component: {fileID: 1916545406}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2281,7 +2280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba192db27f0fe244f9e5aacb96de2a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 0
+  jumpForce: 50
 --- !u!54 &1916545405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2298,24 +2297,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!143 &1916545406
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916545395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1917105713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5608314348268437113, guid: 62ec84888baec4c49883e9abb440eeb3, type: 3}

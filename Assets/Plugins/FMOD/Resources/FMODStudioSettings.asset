@@ -305,7 +305,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -318,8 +319,8 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131593
-  HideSetupWizard: 0
-  LastEventReferenceScanVersion: 0
+  HideSetupWizard: 1
+  LastEventReferenceScanVersion: 131593
   Platforms:
   - {fileID: 2389216285420810901}
   - {fileID: 2963704494195778941}
