@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{2ddc75f1-844f-4c80-9cf9-09eab356e318}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../Documents/GitHub/Silvestria/Assets/Audio/FMODbanks.</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{757596e6-871b-4fd7-91f8-2ac4b90486d9}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{7f0fdb61-aa68-4cb0-acc8-dd1011d0eca1}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{51902fc9-1eeb-4b81-9c57-d4c61e098f20}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{a269ab97-ba74-4432-8fbc-de3037cab75a}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{c81b5794-2c37-4182-818e-b2f91450b424}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{064e8fe7-2c45-44eb-a907-a5e02148b1f5}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{e047f6fd-9ef0-41e4-8ae7-06d70d02201a}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{eeaa3b29-e54f-4469-8bc0-86c15f34350a}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{9632087f-8780-4756-9d58-11059748d922}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{068a400a-430f-45d5-9ba7-d4c2cb29df5a}</destination>
+		</relationship>
+	</object>
+</objects>

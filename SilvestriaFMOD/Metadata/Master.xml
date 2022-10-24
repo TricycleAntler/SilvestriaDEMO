@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerMaster" id="{5d89a382-a5ce-477f-accb-dfdb41864a26}">
+		<property name="volume">
+			<value>3</value>
+		</property>
+		<property name="name">
+			<value>Master Bus</value>
+		</property>
+		<relationship name="masters">
+			<destination>{c25f1aa4-b628-4408-9394-013b4169cfc8}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{3503d6e4-8abc-4696-b9b4-10369b272260}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{26a4407e-0761-419b-9b09-b36cf62d31bb}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{eeaa3b29-e54f-4469-8bc0-86c15f34350a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3503d6e4-8abc-4696-b9b4-10369b272260}">
+		<relationship name="effects">
+			<destination>{79b33d81-cfe8-4626-a101-0ac9a84ecd60}</destination>
+			<destination>{8d8c430e-66da-47c6-8e10-7d1fcd048cc8}</destination>
+			<destination>{685b98bf-e6dd-4775-8725-97e663bc5c54}</destination>
+			<destination>{103cce15-8e37-4f89-af28-f49f648b083b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{26a4407e-0761-419b-9b09-b36cf62d31bb}">
+		<property name="overridingOutputFormat">
+			<value>2</value>
+		</property>
+	</object>
+	<object class="LimiterEffect" id="{79b33d81-cfe8-4626-a101-0ac9a84ecd60}">
+		<property name="ceiling">
+			<value>-1</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{8d8c430e-66da-47c6-8e10-7d1fcd048cc8}" />
+	<object class="CompressorEffect" id="{685b98bf-e6dd-4775-8725-97e663bc5c54}">
+		<property name="threshold">
+			<value>-1</value>
+		</property>
+	</object>
+	<object class="LoudnessMeter" id="{103cce15-8e37-4f89-af28-f49f648b083b}" />
+</objects>
