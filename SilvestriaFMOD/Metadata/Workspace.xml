@@ -33,10 +33,7 @@
 			<destination>{9632087f-8780-4756-9d58-11059748d922}</destination>
 		</relationship>
 		<relationship name="platforms">
-			<destination>{068a400a-430f-45d5-9ba7-d4c2cb29df5a}</destination>
-		</relationship>
-		<relationship name="locales">
-			<destination>{2baa0ef9-387f-499b-accc-e06a55ad6302}</destination>
+			<destination>{f3009ec6-d522-485d-871f-5588e29d8c97}</destination>
 		</relationship>
 	</object>
 </objects>
