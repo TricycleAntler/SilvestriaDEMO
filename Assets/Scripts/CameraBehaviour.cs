@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    public GameObject targetObject;
+      public Transform target;
+      public Vector3 offset;
+
+    // Camera rotation
     private float targetAngle = 0;
     const float rotationAmount = 1.5f;
     public float rotationDistance = 1.0f;
@@ -17,7 +18,10 @@ public class CameraBehaviour : MonoBehaviour
 
 
     {
+        //Camera follows player
         transform.position = target.position + offset;
+
+        // Camera Rotation
 
         if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -35,6 +39,7 @@ public class CameraBehaviour : MonoBehaviour
         }
     }
 
+    // Camera Rotation
     protected void Rotate()
     {
 
@@ -45,12 +50,12 @@ public class CameraBehaviour : MonoBehaviour
 
         if (targetAngle > 0)
         {
-            transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
+            transform.RotateAround(target.transform.position, Vector3.up, -rotationAmount);
             targetAngle -= rotationAmount;
         }
         else if (targetAngle < 0)
         {
-            transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
+            transform.RotateAround(target.transform.position, Vector3.up, rotationAmount);
             targetAngle += rotationAmount;
         }
 
