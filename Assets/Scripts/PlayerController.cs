@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
 
 	private Rigidbody rb;
 	private NavMeshAgent agent;
+    private Vector3 _horizontalJumpVelocity = Vector3.zero;
 
-	[SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForce;
 
 	private bool _isGrounded = true;
 
@@ -52,14 +53,16 @@ public class PlayerController : MonoBehaviour
 		DoJump();
 	}
 
-	private void DoJump()
-	{
-		DisableNavMeshAgent();
-		EnableRB();
-		rb.AddRelativeForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
-	}
+    private void DoJump()
+    {
+        _horizontalJumpVelocity = agent.velocity;
+        DisableNavMeshAgent();
+        EnableRB();
+        _isGrounded = false;
+        rb.AddForce(new Vector3(_horizontalJumpVelocity.x, jumpForce, _horizontalJumpVelocity.z), ForceMode.Impulse);
+    }
 
-	private void SetUpRigidbody()
+    private void SetUpRigidbody()
 	{
 		rb = GetComponent<Rigidbody>();
 		if (rb == null)
@@ -100,13 +103,14 @@ public class PlayerController : MonoBehaviour
 		agent.isStopped = true;
 	}
 
-	private void OnCollisionEnter(Collision other)
-	{
-		if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded)
-		{ // Condition assumes all ground is tagged with "Ground".
-			DisableRB();
-			EnableNavMeshAgent();
-			_isGrounded = true;
-		}
-	}
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded && rb.velocity.y <= 0f)
+        { // Condition assumes all ground is tagged with "Ground".
+            Debug.Log("Conditions met!");
+            DisableRB();
+            EnableNavMeshAgent();
+            _isGrounded = true;
+        }
+    }
 }
