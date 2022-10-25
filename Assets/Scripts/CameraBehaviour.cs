@@ -40,7 +40,7 @@ public class CameraBehaviour : MonoBehaviour
     }
 
     // Camera Rotation
-    protected void Rotate()
+        protected void Rotate()
     {
 
         float step = rotationSpeed * Time.deltaTime;

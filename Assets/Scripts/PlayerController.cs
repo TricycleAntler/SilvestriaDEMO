@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
 	public void TryJump()
 	{
-		if (_isGrounded) return;
+		if (!_isGrounded) return;
 		DoJump();
 	}
 
@@ -81,8 +81,8 @@ public class PlayerController : MonoBehaviour
 	// Effectively disables rigidbody. Technically still enabled but won't do much.
 	private void DisableRB()
 	{
-		rb.isKinematic = false;
-		rb.useGravity = true;
+		rb.isKinematic = true;
+		rb.useGravity = false;
 	}
 
 	private void EnableNavMeshAgent()
