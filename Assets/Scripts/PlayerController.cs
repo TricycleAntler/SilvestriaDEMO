@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
 
 	private Rigidbody rb;
 	private NavMeshAgent agent;
-    private Vector3 _horizontalJumpVelocity = Vector3.zero;
 
-    [SerializeField] private float jumpForce;
+	[SerializeField] private float jumpForce;
+	[SerializeField] private float slideOnLand;
 
 	private bool _isGrounded = true;
+	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 
 
 
@@ -50,19 +51,20 @@ public class PlayerController : MonoBehaviour
 	public void TryJump()
 	{
 		if (!_isGrounded) return;
+		Debug.Log("Do jump tried");
 		DoJump();
 	}
 
-    private void DoJump()
-    {
-        _horizontalJumpVelocity = agent.velocity;
-        DisableNavMeshAgent();
-        EnableRB();
-        _isGrounded = false;
-        rb.AddForce(new Vector3(_horizontalJumpVelocity.x, jumpForce, _horizontalJumpVelocity.z), ForceMode.Impulse);
-    }
+	private void DoJump()
+	{
+		_horizontalJumpVelocity = agent.velocity;
+		DisableNavMeshAgent();
+		EnableRB();
+		_isGrounded = false;
+		rb.AddForce(new Vector3(_horizontalJumpVelocity.x, jumpForce, _horizontalJumpVelocity.z), ForceMode.Impulse);
+	}
 
-    private void SetUpRigidbody()
+	private void SetUpRigidbody()
 	{
 		rb = GetComponent<Rigidbody>();
 		if (rb == null)
@@ -90,6 +92,8 @@ public class PlayerController : MonoBehaviour
 
 	private void EnableNavMeshAgent()
 	{
+		agent.Warp(transform.position);
+		if(Mathf.Abs(_horizontalJumpVelocity.x) > 0f || Mathf.Abs(_horizontalJumpVelocity.z) > 0f) agent.SetDestination(transform.position + (transform.forward * slideOnLand));
 		agent.updatePosition = true;
 		agent.updateRotation = true;
 		agent.isStopped = false;
@@ -97,20 +101,20 @@ public class PlayerController : MonoBehaviour
 
 	private void DisableNavMeshAgent()
 	{
-		agent.SetDestination(transform.position); // I believe this will prevent the agent from break if we jump while moving.
 		agent.updatePosition = false;
 		agent.updateRotation = false;
 		agent.isStopped = true;
 	}
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded && rb.velocity.y <= 0f)
-        { // Condition assumes all ground is tagged with "Ground".
-            Debug.Log("Conditions met!");
-            DisableRB();
-            EnableNavMeshAgent();
-            _isGrounded = true;
-        }
-    }
+	private void OnCollisionEnter(Collision other)
+	{
+		Debug.Log(other.collider.tag);
+		if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded && rb.velocity.y <= 0f)
+		{ // Condition assumes all ground is tagged with "Ground".
+			Debug.Log("Condition met!");
+			DisableRB();
+			EnableNavMeshAgent();
+			_isGrounded = true;
+		}
+	}
 }
