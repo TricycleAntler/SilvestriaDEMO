@@ -31,9 +31,6 @@
 		<relationship name="timeline">
 			<destination>{2fdf9dcd-c66d-4038-b06a-4f2efbe86e6f}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{e3231f29-c4d6-444e-90a0-944c7ba8e442}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{e387a158-b531-4d48-937f-fc7c3cb60b0a}</destination>
 		</relationship>
@@ -61,10 +58,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{3b47d9fe-b983-41db-8003-72f67ccb84bb}">
 		<property name="minimumDistance">
-			<value>3</value>
+			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>40</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{723af8e0-2750-4558-be12-884d5e5ed24e}" />
@@ -82,11 +79,6 @@
 		</relationship>
 		<relationship name="markers">
 			<destination>{f644845d-f8be-40fe-b776-cc4f9150c2cf}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{e3231f29-c4d6-444e-90a0-944c7ba8e442}">
-		<relationship name="preset">
-			<destination>{66d09081-2d88-4c68-a167-9d82697bf3bb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{69354490-fe0a-4366-b363-7e2c08f80762}">
@@ -166,16 +158,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{debeef53-45ad-410b-8eb2-b6cf54c1b29b}">
 		<property name="overridingOutputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{d5d7df2a-fec6-454d-bf84-69f11195b8bc}" />
 	<object class="SpatialiserEffect" id="{57f407fe-0789-4c5a-80da-c13bcbfd57f5}">
 		<property name="minimumDistance">
-			<value>3</value>
+			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>40</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{1f39d0e1-8ec1-4d67-8fe9-4f8ca183243e}" />
@@ -186,10 +178,10 @@
 	</object>
 	<object class="SpatialiserEffect" id="{5489e540-1ada-42d5-8250-ba4faf0f75a5}">
 		<property name="minimumDistance">
-			<value>3</value>
+			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>10</value>
+			<value>40</value>
 		</property>
 		<property name="userPanDirection">
 			<value>67.9945374</value>
