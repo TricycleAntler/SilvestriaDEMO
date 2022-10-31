@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
 
-	private bool _isGrounded = true;
+	//private bool _isGrounded = true;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 
 
@@ -115,6 +115,6 @@ public class PlayerController : MonoBehaviour
 			DisableRB();
 			EnableNavMeshAgent();
 		*/
-			_isGrounded = true;
+			//_isGrounded = true;
 		}
 	}
