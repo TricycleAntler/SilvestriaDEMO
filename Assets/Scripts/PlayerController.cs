@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 			gameObject.AddComponent<NavMeshAgent>();
 			agent = GetComponent<NavMeshAgent>();
 		}
-		SetUpRigidbody();
+		//SetUpRigidbody();
 	}
 
 	void Update()
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 				agent.SetDestination(hit.point);
 			}
 		}
-
+		/*
 		if (Input.GetMouseButtonDown(1))
 		{
 			TryJump();
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("Condition met!");
 			DisableRB();
 			EnableNavMeshAgent();
+		*/
 			_isGrounded = true;
 		}
 	}
-}

@@ -19,11 +19,11 @@ public class CAMFollowPlayer : MonoBehaviour
     void Update()
     {
         _thisTransform.position = _targetTransform.position;
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("q") || (Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             UpdateRotationTarget(-_rotationDegree);
         }
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("e") || (Input.GetKeyDown(KeyCode.RightArrow)))
         {
             UpdateRotationTarget(_rotationDegree);
         }
