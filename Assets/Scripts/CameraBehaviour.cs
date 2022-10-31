@@ -23,12 +23,12 @@ public class CameraBehaviour : MonoBehaviour
 
         // Camera Rotation
 
-        if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown("q"))
         {
             targetAngle -= 90.0f;
         }
 
-        else if (Input.GetKeyDown("e") || Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown("e"))
         {
             targetAngle += 90.0f;
         }
