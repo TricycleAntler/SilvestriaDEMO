@@ -43,8 +43,8 @@ public class CinemachineCamEditor : MonoBehaviour
     }
     private void Awake()
     {
-        inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").performed += scroll => ZoomYAxis = scroll.ReadValue<float>();
-        inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").canceled += scroll => ZoomYAxis = 0;
+        //inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").performed += scroll => ZoomYAxis = scroll.ReadValue<float>();
+        //inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").canceled += scroll => ZoomYAxis = 0;
         //quick fix
         inputProvider.FindActionMap("CameraControls").FindAction("Camera Rotation Left").performed += UpdateCinemachineCamRotationLeft;
         inputProvider.FindActionMap("CameraControls").FindAction("Camera Rotation Right").performed += UpdateCinemachineCamRotationRight;
@@ -52,7 +52,7 @@ public class CinemachineCamEditor : MonoBehaviour
 
     private void OnEnable()
     {
-        inputProvider.FindAction("Camera Zoom").Enable();
+        //inputProvider.FindAction("Camera Zoom").Enable();
         inputProvider.FindAction("Camera Rotation Left").Enable();
         inputProvider.FindAction("Camera Rotation Right").Enable();
     }
@@ -71,6 +71,12 @@ public class CinemachineCamEditor : MonoBehaviour
         //{
         //    UpdateCinemachineCamRotation(-_rotationDegree);
         //}
+        //quick fix for player zoom feature.
+        if(Input.mouseScrollDelta.y != 0)
+        {
+            AdjustCameraZoomIndex(Input.mouseScrollDelta.y);
+        }
+        
 
     }
 
@@ -115,18 +121,18 @@ public class CinemachineCamEditor : MonoBehaviour
 
     public void AdjustCameraZoomIndex(float ZoomYAxis)
     {
-        if (zoomYAxis == 0)
+        if (ZoomYAxis == 0)
         {
             Debug.Log("ZoomYAxis Value = 0");
             return;
         }
 
-        if(zoomYAxis < 0)
+        if(ZoomYAxis < 0)
         {
             newMiddleRigRadius = currentMiddleRigRadius + _zoomSpeed;
         }
 
-        if(zoomYAxis > 0)
+        if(ZoomYAxis > 0)
         {
             newMiddleRigRadius = currentMiddleRigRadius - _zoomSpeed;
         }
@@ -135,8 +141,8 @@ public class CinemachineCamEditor : MonoBehaviour
 
     private void OnDisable()
     {
-        inputProvider.FindAction("Camera Zoom").Disable();
+        //inputProvider.FindAction("Camera Zoom").Disable();
         inputProvider.FindAction("Camera Rotation Left").Disable();
-        inputProvider.FindAction("Camera Rotation Right").Enable();
+        inputProvider.FindAction("Camera Rotation Right").Disable();
     }
 }
