@@ -57,20 +57,8 @@ public class CinemachineCamEditor : MonoBehaviour
         inputProvider.FindAction("Camera Rotation Right").Enable();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown("q") || (Input.GetKeyDown(KeyCode.LeftArrow)))
-        //{
-            //UpdateCinemachineCamRotation(_rotationDegree);
-            //Debug.Log(inputProvider.FindAction("Camera Rotation Left").name);
-
-        //}
-        
-        //if (Input.GetKeyDown("e") || (Input.GetKeyDown(KeyCode.RightArrow)))
-        //{
-        //    UpdateCinemachineCamRotation(-_rotationDegree);
-        //}
         //quick fix for player zoom feature.
         if(Input.mouseScrollDelta.y != 0)
         {
