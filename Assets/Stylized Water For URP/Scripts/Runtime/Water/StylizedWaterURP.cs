@@ -90,6 +90,7 @@ namespace StylizedWater
         [Range(0f, 15f)] public float intersectionFoamShadowProjection;
         #endregion
 
+
         #region Intersection Effects
         public enum FoamMovement { Directional, Shore };
         public FoamMovement foamMovement;
