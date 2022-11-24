@@ -23,6 +23,7 @@ Material:
   m_Name: OakMaterial
   m_Shader: {fileID: 4800000, guid: 99134b1f0c27d54469a840832a28fadf, type: 3}
   m_ValidKeywords:
+  - EFFECT_BUMP
   - _WINDQUALITY_NONE
   m_InvalidKeywords:
   - _ALPHATEST_ON
@@ -194,7 +195,7 @@ Material:
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.401
     - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _HeightTransition: 0
@@ -205,7 +206,7 @@ Material:
     - _Metallic2: 0
     - _Metallic3: 0
     - _Mode: 0
-    - _NormalMapKwToggle: 0
+    - _NormalMapKwToggle: 1
     - _NumLayersCount: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
