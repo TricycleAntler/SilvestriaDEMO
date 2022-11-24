@@ -38,9 +38,17 @@ public class PlayerController : MonoBehaviour
 
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity))
 			{
+				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
+				if(itemTemplate != null){
+					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
+					inventoryObject.AddItem(itemTemplate.GetItem());
+					itemTemplate.DestroyItemTemplate();
+				}
 				agent.SetDestination(hit.point);
 			}
 		}
+	}
+
 		/*
 		if (Input.GetMouseButtonDown(1))
 		{
@@ -116,5 +124,4 @@ public class PlayerController : MonoBehaviour
 			EnableNavMeshAgent();
 		*/
 			//_isGrounded = true;
-		}
-	}
+}
