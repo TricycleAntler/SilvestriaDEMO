@@ -15,8 +15,13 @@ public class Player : MonoBehaviour
     }
 
     public void DisplayInventory() {
-        uiInventory.gameObject.SetActive(true);
-        uiInventory.SetInventory(inventory);
+        if(uiInventory.gameObject.activeInHierarchy){
+            uiInventory.gameObject.SetActive(false);
+        }
+        else {
+            uiInventory.gameObject.SetActive(true);
+            uiInventory.SetInventory(inventory);
+        }
     }
 
     public Inventory GetPlayerInventory() {

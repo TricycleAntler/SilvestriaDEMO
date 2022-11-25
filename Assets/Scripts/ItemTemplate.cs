@@ -23,6 +23,10 @@ public class ItemTemplate : MonoBehaviour
         spriteRenderer.sprite = item.GetSprite();
    }
 
+   public void SetItemOnly(Item item) {
+        this.item = item;
+   }
+
    public Item GetItem() {
     return item;
    }
