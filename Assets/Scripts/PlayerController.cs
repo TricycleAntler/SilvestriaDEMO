@@ -8,17 +8,17 @@ public class PlayerController : MonoBehaviour
 
 	private Rigidbody rb;
 	private NavMeshAgent agent;
-
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
 
 	//private bool _isGrounded = true;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
-
+	private bool itemDragStarted;
 
 
 	void Awake()
 	{
+		itemDragStarted = false;
 		agent = GetComponent<NavMeshAgent>();
 		if (agent == null)
 		{
@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
 		//SetUpRigidbody();
 	}
 
+	void OnEnable() {
+		DragAndDrop.OnUIActionStart += SetItemDragBool;
+	}
+
 	void Update()
 	{
 
@@ -35,12 +39,28 @@ public class PlayerController : MonoBehaviour
 		{
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-			if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+			//this bool checks if there is something over the UI
+			bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !isOverUI && !itemDragStarted)
 			{
+				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
+				if(itemTemplate != null){
+					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
+					inventoryObject.AddItem(itemTemplate.GetItem());
+					itemTemplate.DestroyItemTemplate();
+				}
 				agent.SetDestination(hit.point);
 			}
+			if(itemDragStarted) {
+				Debug.Log("item Dragging started");
+			}
 		}
+	}
+
+	public void SetItemDragBool(bool dragVal) {
+		itemDragStarted = dragVal;
+	}
+
 		/*
 		if (Input.GetMouseButtonDown(1))
 		{
@@ -116,5 +136,8 @@ public class PlayerController : MonoBehaviour
 			EnableNavMeshAgent();
 		*/
 			//_isGrounded = true;
-		}
+
+	void OnDisable() {
+		DragAndDrop.OnUIActionStart -= SetItemDragBool;
 	}
+}
