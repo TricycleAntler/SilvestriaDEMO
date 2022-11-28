@@ -27,7 +27,8 @@ Material:
   - EFFECT_HUE_VARIATION
   - _WINDQUALITY_BETTER
   m_InvalidKeywords:
-  - BACKFACE_NORMAL_MODE_MIRROR
+  - _ALPHATEST_ON
+  - _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -46,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 8b7042752ea3f19459f818265d78c29a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 12776970dfc37144a8e26abfcb3c6eed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ClearCoatMap:
@@ -82,7 +83,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 86db618d34f2a284d92f9ee598703c04, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7eefa5a784488c74b9f3fdf22499aa72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask0:
@@ -191,12 +192,14 @@ Material:
     - _BillboardShadowFade: 0.5
     - _Blend: 0
     - _BlendOp: 0
+    - _Brightness: 0.086
     - _BumpScale: 1
     - _ClearCoat: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.695
+    - _Detail: 0.305
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -238,6 +241,7 @@ Material:
     - _SpecularHighlights: 1
     - _SquashAmount: 1
     - _SrcBlend: 1
+    - _Strength: 0.381
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
     - _Surface: 0
@@ -253,7 +257,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
-    - _HueVariationColor: {r: 0, g: 0, b: 0, a: 0.2}
+    - _HueVariationColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.2}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
