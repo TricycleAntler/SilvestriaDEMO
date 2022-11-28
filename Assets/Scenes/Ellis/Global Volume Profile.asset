@@ -61,10 +61,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1.36
+    m_Value: 1.03
   intensity:
     m_OverrideState: 1
-    m_Value: 7.28
+    m_Value: 7.31
   scatter:
     m_OverrideState: 1
     m_Value: 0.455
@@ -111,17 +111,17 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.007633588
+          time: 0
           value: 0
-          inSlope: 1
-          outSlope: 1
+          inSlope: 0.38157558
+          outSlope: 0.38157558
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.7099237
-          value: 0.91167194
+          time: 0.55789477
+          value: 0.814978
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -327,10 +327,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.31
+    m_Value: 0.4
   contrast:
     m_OverrideState: 1
-    m_Value: -5.9
+    m_Value: 1.8
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
