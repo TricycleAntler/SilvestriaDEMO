@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f317d2e4-d30a-4650-9d56-d14ed95ffc0b}">
+		<property name="name">
+			<value>RiverSize</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a269ab97-ba74-4432-8fbc-de3037cab75a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c398e0fb-cefc-4e34-adb1-68d106550638}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c398e0fb-cefc-4e34-adb1-68d106550638}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
