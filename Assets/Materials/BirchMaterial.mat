@@ -28,7 +28,13 @@ Material:
   - _WINDQUALITY_BETTER
   m_InvalidKeywords:
   - _ALPHATEST_ON
+  - _CONNECTEDALPHA_ON
   - _NORMALMAP
+  - _OUTLINEENABLED_ON
+  - _OUTLINEMODE_GRADIENT
+  - _OUTLINEPOSITION_INSIDE_UNDER_SPRITE
+  - _OUTLINESHAPE_CONTOUR
+  - _TILEMODE_STRETCH
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,6 +85,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ExtraTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FrameTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -187,6 +197,8 @@ Material:
     - _AO: 2.4
     - _AlphaClip: 1
     - _AlphaClipThreshold: 0.33
+    - _AlphaThreshold: 0
+    - _Angle: 50.19
     - _BaseLight: 0.35
     - _BillboardKwToggle: 0
     - _BillboardShadowFade: 0.5
@@ -197,6 +209,7 @@ Material:
     - _ClearCoat: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ConnectedAlpha: 1
     - _Cull: 2
     - _Cutoff: 0.695
     - _Detail: 0.305
@@ -224,6 +237,10 @@ Material:
     - _Occlusion: 7.5
     - _OcclusionStrength: 1
     - _OldHueVarBehavior: 0
+    - _OutlineEnabled: 1
+    - _OutlineMode: 1
+    - _OutlinePosition: 0
+    - _OutlineShape: 0
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -245,9 +262,12 @@ Material:
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
     - _Surface: 0
+    - _Thickness: 10.41
+    - _TileMode: 0
     - _TwoSided: 0
     - _UVSec: 0
     - _WINDQUALITY: 4
+    - _Weight: 1
     - _WindQuality: 3
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -256,9 +276,13 @@ Material:
     - _Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _GradientOutline1: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientOutline2: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _HueVariationColor: {r: 0, g: 0, b: 0, a: 0.2}
+    - _ImageOutline: {r: 0, g: 0, b: 0, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SolidOutline: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rock
-  m_Shader: {fileID: -6465566751694194690, guid: 34bf62139380ab746a7f1308f87321db, type: 3}
+  m_Shader: {fileID: 4800000, guid: e1b2238bd7ce0eb47a8b95631b07108c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,6 +21,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_93021b81bc604a779a4dd2f83b95f849:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -49,13 +53,17 @@ Material:
     - Vector1_b27e810e566a4496a2709e22a93790ae: 0
     - Vector1_f4346caac0c24533843067b1caa8641a: 23.3
     - Vector1_f4346caac0c24533843067b1caa8641a_1: 0
+    - _Brightness: 0.119
+    - _Detail: 0.277
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Strength: 0.383
     m_Colors:
     - Color_adc979e474cd4c52803b73073550b88e: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
     - Color_c4b6043ac1de492fb8bbd1482b723534: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
     - Vector2_b3499b7416b64762a92801fd1a260104: {r: 1.74, g: 0, b: 0, a: 0}
     - Vector2_d1261ba7c1e140be8ca68486b05912b4: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &3332649699328836368
 MonoBehaviour:
