@@ -516,7 +516,7 @@ namespace FMODUnity
                 fmodAffinity |= fmodMask;
             }
         }
-
+        //
         public static void EnforceLibraryOrder()
         {
 #if UNITY_ANDROID && !UNITY_EDITOR
