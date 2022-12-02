@@ -5,7 +5,7 @@
 			<value>AMB_Wind</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{611b9049-df72-4291-9bbd-a3ad52824246}</destination>
@@ -226,6 +226,7 @@
 	<object class="MixerBusEffectChain" id="{d4e83498-cbbd-42de-a51f-3cf4979930d4}">
 		<relationship name="effects">
 			<destination>{f99fff0e-9220-4703-acb8-8a149c5e6bd5}</destination>
+			<destination>{05fefa52-4ca1-452d-aa79-2b65dc6e5632}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{29f1b89e-0af8-4298-a008-df8a4478bdf7}" />
@@ -301,6 +302,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{c3663347-d5d1-4e2a-864e-6a27f701bdc4}" />
 	<object class="MixerBusFader" id="{f99fff0e-9220-4703-acb8-8a149c5e6bd5}" />
+	<object class="SpatialiserEffect" id="{05fefa52-4ca1-452d-aa79-2b65dc6e5632}" />
 	<object class="AutomationPoint" id="{95966c1e-7470-4c7c-a9b7-c966decb21d3}">
 		<property name="position">
 			<value>0</value>

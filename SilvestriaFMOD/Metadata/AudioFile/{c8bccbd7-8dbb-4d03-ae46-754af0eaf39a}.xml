@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c8bccbd7-8dbb-4d03-ae46-754af0eaf39a}">
+		<property name="assetPath">
+			<value>AMB_Embers_loop.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.3034013605442176</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e047f6fd-9ef0-41e4-8ae7-06d70d02201a}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -65,7 +65,7 @@
 			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>40</value>
+			<value>25</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{723af8e0-2750-4558-be12-884d5e5ed24e}" />
@@ -126,6 +126,9 @@
 		<property name="looping">
 			<value>true</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{dc9e308f-667d-4b88-b25b-0544055ec330}</destination>
+		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{3ebc2f70-33c7-4c93-9a7e-f3ba9d9f0b06}</destination>
 		</relationship>
@@ -204,6 +207,14 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{5a9908fb-1e53-4f6f-b8d1-6e034c3d7af8}" />
+	<object class="RandomizerModulator" id="{dc9e308f-667d-4b88-b25b-0544055ec330}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>startOffset</value>
+		</property>
+		<property name="amount">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="ParameterCondition" id="{3ebc2f70-33c7-4c93-9a7e-f3ba9d9f0b06}">
 		<property name="minimum">
 			<value>1</value>
@@ -250,7 +261,7 @@
 			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>40</value>
+			<value>25</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{1f39d0e1-8ec1-4d67-8fe9-4f8ca183243e}" />
@@ -264,7 +275,7 @@
 			<value>5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>40</value>
+			<value>25</value>
 		</property>
 		<property name="userPanDirection">
 			<value>67.9945374</value>
