@@ -21,7 +21,7 @@ public class Inventory
             bool itemAlreadyExistInInventory = false;
             foreach(Item invItem in itemList) {
                 if(invItem.itemType == item.itemType) {
-                    invItem.amount += item.amount;
+                    invItem.amount += 1;
                     itemAlreadyExistInInventory = true;
                 }
             }
@@ -32,8 +32,12 @@ public class Inventory
         else {
             itemList.Add(item);
         }
-        Debug.Log("item Added");
         OnInventoryListChanged?.Invoke();
+        //testing
+        foreach(Item itm in itemList){
+            Debug.Log(itm);
+            Debug.Log(itm.amount);
+        }
     }
 
     public void DropItem(Item item) {

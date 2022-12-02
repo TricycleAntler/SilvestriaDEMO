@@ -7,6 +7,7 @@ using System;
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public static event Action<bool> OnUIActionStart;
+    public static event Action<Vector3> OnSeedDrop;
     private RectTransform rectTransform;
     private Transform itemPosition;
     private float itemSpawnPosY = 4.29f;
@@ -41,10 +42,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             Inventory inventory = player.GetPlayerInventory();
             //drop item from inventory
             //create planting tree game object and place it here
-            float x = hit.point.x;
-            float z = hit.point.z;
-            Vector3 spawnPosition = new Vector3(x,itemSpawnPosY,z);
-            ItemTemplate.SpawnItem(spawnPosition,GetComponent<ItemTemplate>().GetItem()); //change this to the tree object/anim that should be spawned
+            //float x = hit.point.x;
+            //float z = hit.point.z;
+            //Vector3 spawnPosition = new Vector3(x,itemSpawnPosY,z);
+            //ItemTemplate.SpawnItem(spawnPosition,GetComponent<ItemTemplate>().GetItem()); //change this to the tree object/anim that should be spawned
+            OnSeedDrop?.Invoke(hit.point);
             inventory.DropItem(GetComponent<ItemTemplate>().GetItem());
         }
         else {

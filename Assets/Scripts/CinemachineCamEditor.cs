@@ -21,6 +21,7 @@ public class CinemachineCamEditor : MonoBehaviour
     private float newAngle;
     private float camDistance;
     private bool isRotating;
+    private bool mYAxisValCorrect = false;
 
     [SerializeField] private float zoomYAxis = 0;
 
@@ -39,7 +40,7 @@ public class CinemachineCamEditor : MonoBehaviour
             zoomYAxis = value;
             AdjustCameraZoomIndex(ZoomYAxis);
         }
-             
+
     }
     private void Awake()
     {
@@ -56,20 +57,27 @@ public class CinemachineCamEditor : MonoBehaviour
         inputProvider.FindAction("Camera Rotation Left").Enable();
         inputProvider.FindAction("Camera Rotation Right").Enable();
     }
-
     void Update()
     {
+        //its just a quick fix. find out why the value cannot be edited in the editor
+        if(mYAxisValCorrect == false){
+            mYAxisValCorrect = true;
+        }
         //quick fix for player zoom feature.
         if(Input.mouseScrollDelta.y != 0)
         {
             AdjustCameraZoomIndex(Input.mouseScrollDelta.y);
         }
-        
+
 
     }
 
     void LateUpdate()
     {
+        //its just a quick fix. find out why the value cannot be edited in the editor
+        if(mYAxisValCorrect){
+            freelook.m_YAxis.Value = 0.6f;
+        }
         if(isRotating)
         {
             freelook.m_XAxis.Value = Quaternion.Slerp(Quaternion.Euler(0,freelook.m_XAxis.Value, 0), Quaternion.Euler(0,newAngle, 0), _rotationSpeed * Time.deltaTime).eulerAngles.y;
@@ -84,6 +92,7 @@ public class CinemachineCamEditor : MonoBehaviour
 
     private void UpdateCameraZoom()
     {
+        //change the  Y axis value to zoom the camera in and out 
         if(currentMiddleRigRadius == newMiddleRigRadius)
         {
             return;
