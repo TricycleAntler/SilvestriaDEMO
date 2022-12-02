@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,14 +11,20 @@ public class PlayerController : MonoBehaviour
 	private NavMeshAgent agent;
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
+	[SerializeField] private UI_Inventory uiInventory;
 
 	//private bool _isGrounded = true;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
+	private Vector3 dropPosition;
 	private bool itemDragStarted;
+	private bool inventoryOpened;
+	private bool playerAutoMove;
 
+    public bool PlayerAutoMove { get => playerAutoMove; set => playerAutoMove = value; }
 
-	void Awake()
+    void Awake()
 	{
+		inventoryOpened = false;
 		itemDragStarted = false;
 		agent = GetComponent<NavMeshAgent>();
 		if (agent == null)
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
 	void OnEnable() {
 		DragAndDrop.OnUIActionStart += SetItemDragBool;
+		DragAndDrop.OnSeedDrop += GetItemDropPosition;
 	}
 
 	void Update()
@@ -40,8 +48,7 @@ public class PlayerController : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			//this bool checks if there is something over the UI
-			bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
-			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !isOverUI && !itemDragStarted)
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
 			{
 				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
 				if(itemTemplate != null){
@@ -51,14 +58,31 @@ public class PlayerController : MonoBehaviour
 				}
 				agent.SetDestination(hit.point);
 			}
-			if(itemDragStarted) {
-				Debug.Log("item Dragging started");
-			}
 		}
+		//player moves to the position where the seed is dropped
+		if(PlayerAutoMove) {
+			agent.SetDestination(dropPosition);
+			PlayerAutoMove = false;
+		}
+		SetInventoryActiveStatus();
 	}
 
 	public void SetItemDragBool(bool dragVal) {
 		itemDragStarted = dragVal;
+	}
+
+	public void SetInventoryActiveStatus() {
+		if(uiInventory.isActiveAndEnabled){
+			inventoryOpened = true;
+		}
+		else {
+			inventoryOpened = false;
+		}
+	}
+
+	public void GetItemDropPosition(Vector3 position) {
+		dropPosition = position;
+		PlayerAutoMove = true;
 	}
 
 		/*
@@ -139,5 +163,6 @@ public class PlayerController : MonoBehaviour
 
 	void OnDisable() {
 		DragAndDrop.OnUIActionStart -= SetItemDragBool;
+		DragAndDrop.OnSeedDrop -= GetItemDropPosition;
 	}
 }
