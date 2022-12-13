@@ -25,18 +25,11 @@ public class CinemachineCamEditor : MonoBehaviour
 
     [SerializeField] private float zoomYAxis = 0;
 
-    public float ZoomYAxis 
-    { 
-        get => zoomYAxis; 
+    public float ZoomYAxis
+    {
+        get => zoomYAxis;
         set
         {
-            if (zoomYAxis == 0)
-            {
-                Debug.Log("Zoom Y axis is 0");
-                return;
-            }
-                
-
             zoomYAxis = value;
             AdjustCameraZoomIndex(ZoomYAxis);
         }
@@ -44,32 +37,17 @@ public class CinemachineCamEditor : MonoBehaviour
     }
     private void Awake()
     {
-        //inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").performed += scroll => ZoomYAxis = scroll.ReadValue<float>();
-        //inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").canceled += scroll => ZoomYAxis = 0;
-        //quick fix
         inputProvider.FindActionMap("CameraControls").FindAction("Camera Rotation Left").performed += UpdateCinemachineCamRotationLeft;
         inputProvider.FindActionMap("CameraControls").FindAction("Camera Rotation Right").performed += UpdateCinemachineCamRotationRight;
+        inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").performed += x => ZoomYAxis = x.ReadValue<float>();
+        inputProvider.FindActionMap("CameraControls").FindAction("Camera Zoom").canceled += x => ZoomYAxis = 0;
     }
 
     private void OnEnable()
     {
-        //inputProvider.FindAction("Camera Zoom").Enable();
         inputProvider.FindAction("Camera Rotation Left").Enable();
         inputProvider.FindAction("Camera Rotation Right").Enable();
-    }
-    void Update()
-    {
-        //its just a quick fix. find out why the value cannot be edited in the editor
-        if(mYAxisValCorrect == false){
-            mYAxisValCorrect = true;
-        }
-        //quick fix for player zoom feature.
-        if(Input.mouseScrollDelta.y != 0)
-        {
-            AdjustCameraZoomIndex(Input.mouseScrollDelta.y);
-        }
-
-
+        inputProvider.FindAction("Camera Zoom").Enable();
     }
 
     void LateUpdate()
@@ -92,7 +70,7 @@ public class CinemachineCamEditor : MonoBehaviour
 
     private void UpdateCameraZoom()
     {
-        //change the  Y axis value to zoom the camera in and out 
+        //change the  Y axis value to zoom the camera in and out
         if(currentMiddleRigRadius == newMiddleRigRadius)
         {
             return;
@@ -105,13 +83,11 @@ public class CinemachineCamEditor : MonoBehaviour
     }
     private void UpdateCinemachineCamRotationLeft(InputAction.CallbackContext context)
     {
-        //if()
         newAngle = freelook.m_XAxis.Value + _rotationDegree;
         isRotating = true;
     }
     private void UpdateCinemachineCamRotationRight(InputAction.CallbackContext context)
     {
-        //if()
         newAngle = freelook.m_XAxis.Value - _rotationDegree;
         isRotating = true;
     }
@@ -133,13 +109,12 @@ public class CinemachineCamEditor : MonoBehaviour
         {
             newMiddleRigRadius = currentMiddleRigRadius - _zoomSpeed;
         }
-            
     }
 
     private void OnDisable()
     {
-        //inputProvider.FindAction("Camera Zoom").Disable();
         inputProvider.FindAction("Camera Rotation Left").Disable();
         inputProvider.FindAction("Camera Rotation Right").Disable();
+        inputProvider.FindAction("Camera Zoom").Disable();
     }
 }
