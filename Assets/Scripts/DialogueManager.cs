@@ -4,9 +4,11 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private InputActionAsset inputProvider;
     [SerializeField] private TextAsset inkStory;
     [SerializeField] private GameObject speaker;
     [SerializeField] private GameObject dialoguePanel;
@@ -38,22 +40,19 @@ public class DialogueManager : MonoBehaviour
         }
         Instance = this;
         textBody = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+        inputProvider.FindActionMap("UIActions").FindAction("Interact").performed += EnterDialogueMode;
+        inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
 
+    }
+
+    private void OnEnable() {
+        inputProvider.FindAction("Interact").Enable();
+        inputProvider.FindAction("Skip Dialogue").Enable();
     }
     void Start()
     {
         dialogueIsPlaying = false;
         dialogueBox.SetActive(false);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.D)){
-            Debug.Log("D PRESSED");
-            EnterDialogueMode(inkStory);
-        }
-        UpdateDialogueSystem();
-
     }
     private void ManageTags() {
         tags = story.currentTags;
@@ -84,13 +83,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EnterDialogueMode(TextAsset inkJson) {
-        story = new Story(inkJson.text);
-        dialogueIsPlaying = true;
-        //speakers.SetActive(true);
-        dialoguePanel.SetActive(true);
-        dialogueBox.SetActive(true);
-        ContinueStory();
+    private void EnterDialogueMode(InputAction.CallbackContext context) {
+        if(dialogueIsPlaying) {
+            return;
+        }
+        else {
+            story = new Story(inkStory.text);
+            dialogueIsPlaying = true;
+            //speakers.SetActive(true);
+            dialoguePanel.SetActive(true);
+            dialogueBox.SetActive(true);
+            ContinueStory();
+        }
     }
 
     private void ExitDialogueMode() {
@@ -144,13 +148,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void UpdateDialogueSystem() {
-          if(!dialogueIsPlaying) {
+    private void UpdateDialogueSystem(InputAction.CallbackContext context) {
+        if(!dialogueIsPlaying) {
             return;
         }
-        if(Input.GetKeyDown(KeyCode.Return)){
-            ContinueStory();
-        }
+        ContinueStory();
     }
 
     private void SetPortraitAnimations(Animator animator,string tagValue) {
@@ -179,6 +181,11 @@ public class DialogueManager : MonoBehaviour
         }
         isTyping = false;
         yield return null;
+    }
+
+    private void OnDisable() {
+        inputProvider.FindAction("Interact").Disable();
+        inputProvider.FindAction("Skip Dialogue").Disable();
     }
 
 }
