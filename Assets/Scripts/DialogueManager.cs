@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using TMPro;
+using System;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputProvider;
-    [SerializeField] private TextAsset inkStory;
     [SerializeField] private GameObject speaker;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Animator dialoguePanelAnim;
@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     private List<string> tags = new List<string>();
     private bool dialogueIsPlaying;
     private bool isTyping = false;
+    private string playerCurrentlySpeakingTo;
 
     private const string SPEAKER = "speaker";
     private const string PORTRAIT = "portrait";
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager Instance;
     public List<CharacterUiBehaviour> characterUIs = new List<CharacterUiBehaviour>();
+    public static event Action<string> OnDialogueExit;
 
     private void Awake() {
         if(Instance != null) {
@@ -40,14 +42,13 @@ public class DialogueManager : MonoBehaviour
         }
         Instance = this;
         textBody = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
-        inputProvider.FindActionMap("UIActions").FindAction("Interact").performed += EnterDialogueMode;
         inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
 
     }
 
     private void OnEnable() {
-        inputProvider.FindAction("Interact").Enable();
         inputProvider.FindAction("Skip Dialogue").Enable();
+        DialogueTrigger.OnDialogueActivated += EnterDialogueMode;
     }
     void Start()
     {
@@ -83,12 +84,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EnterDialogueMode(InputAction.CallbackContext context) {
+    public void EnterDialogueMode(TextAsset inkJSON,string characterName) {
         if(dialogueIsPlaying) {
             return;
         }
         else {
-            story = new Story(inkStory.text);
+            story = new Story(inkJSON.text);
+            playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
@@ -98,6 +100,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void ExitDialogueMode() {
+        OnDialogueExit?.Invoke(playerCurrentlySpeakingTo);
         dialogueIsPlaying = false;
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
@@ -184,7 +187,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void OnDisable() {
-        inputProvider.FindAction("Interact").Disable();
+        DialogueTrigger.OnDialogueActivated -= EnterDialogueMode;
         inputProvider.FindAction("Skip Dialogue").Disable();
     }
 
