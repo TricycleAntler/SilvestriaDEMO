@@ -96,7 +96,6 @@ public class CinemachineCamEditor : MonoBehaviour
     {
         if (ZoomYAxis == 0)
         {
-            Debug.Log("ZoomYAxis Value = 0");
             return;
         }
 
