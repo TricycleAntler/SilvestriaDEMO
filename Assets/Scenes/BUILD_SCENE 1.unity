@@ -41411,10 +41411,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1707152502}
     m_Modifications:
-    - target: {fileID: 5512026211554140995, guid: 2c528091ee782344f84bc4794999176b, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5512026211632936884, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_Name
       value: DialogueUI
