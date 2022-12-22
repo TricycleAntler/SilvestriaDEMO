@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 using System;
 
 public class PlayerController : MonoBehaviour
@@ -12,10 +13,11 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
 	[SerializeField] private UI_Inventory uiInventory;
-
-	//private bool _isGrounded = true;
+	[SerializeField] private InputActionAsset inputProvider;
+	[SerializeField] private float moveSpeed = 2f;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 	private Vector3 dropPosition;
+	private Vector2 moveVals;
 	private bool itemDragStarted;
 	private bool inventoryOpened;
 	private bool playerAutoMove;
@@ -33,38 +35,51 @@ public class PlayerController : MonoBehaviour
 			agent = GetComponent<NavMeshAgent>();
 		}
 		//SetUpRigidbody();
+		//inputProvider.FindActionMap("PlayerMovements").FindAction("Directional Movements").performed += ManagePlayerMovement;
 	}
 
 	void OnEnable() {
+		inputProvider.FindAction("Directional Movements").Enable();
+		inputProvider.FindAction("Item Pickup").Enable();
 		DragAndDrop.OnUIActionStart += SetItemDragBool;
 		DragAndDrop.OnSeedDrop += GetItemDropPosition;
 	}
 
 	void Update()
 	{
-
-		if (Input.GetMouseButton(0))
-		{
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			//this bool checks if there is something over the UI
-			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
-			{
-				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
-				if(itemTemplate != null){
-					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
-					inventoryObject.AddItem(itemTemplate.GetItem());
-					itemTemplate.DestroyItemTemplate();
-				}
-				agent.SetDestination(hit.point);
-			}
-		}
+		MoveCharacter();
 		//player moves to the position where the seed is dropped
 		if(PlayerAutoMove) {
 			agent.SetDestination(dropPosition);
 			PlayerAutoMove = false;
 		}
 		SetInventoryActiveStatus();
+	}
+
+	public void OnPlayerMove(InputAction.CallbackContext context) {
+		moveVals = context.ReadValue<Vector2>();
+	}
+
+	public void OnMouseClick(InputAction.CallbackContext context) {
+		Debug.Log("mOUSE CLICK");
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+		//this bool checks if there is something over the UI
+		if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
+		{
+			ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
+			if(itemTemplate != null) {
+				Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
+				inventoryObject.AddItem(itemTemplate.GetItem());
+				itemTemplate.DestroyItemTemplate();
+			}
+		}
+	}
+
+	private void MoveCharacter() {
+		Vector3 movement = new Vector3(moveVals.x,0f,moveVals.y);
+		transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(movement), 0.15f);
+		transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
 	}
 
 	public void SetItemDragBool(bool dragVal) {
@@ -162,6 +177,8 @@ public class PlayerController : MonoBehaviour
 			//_isGrounded = true;
 
 	void OnDisable() {
+		inputProvider.FindAction("Directional Movements").Disable();
+		inputProvider.FindAction("Item Pickup").Disable();
 		DragAndDrop.OnUIActionStart -= SetItemDragBool;
 		DragAndDrop.OnSeedDrop -= GetItemDropPosition;
 	}
