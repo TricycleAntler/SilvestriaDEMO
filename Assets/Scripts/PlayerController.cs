@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
 	}
 
 	public void OnMouseClick(InputAction.CallbackContext context) {
-		Debug.Log("mOUSE CLICK");
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 		//this bool checks if there is something over the UI
@@ -77,9 +76,11 @@ public class PlayerController : MonoBehaviour
 	}
 
 	private void MoveCharacter() {
-		Vector3 movement = new Vector3(moveVals.x,0f,moveVals.y);
-		transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(movement), 0.15f);
-		transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+		Vector3 movement = new Vector3(moveVals.y,0f,-moveVals.x);
+		if(movement != Vector3.zero) {
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+			transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+		}
 	}
 
 	public void SetItemDragBool(bool dragVal) {
