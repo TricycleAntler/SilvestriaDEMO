@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 	public void OnPlayerMove(InputAction.CallbackContext context) {
+		//get player input values 
 		moveVals = context.ReadValue<Vector2>();
 	}
 
@@ -76,10 +77,23 @@ public class PlayerController : MonoBehaviour
 	}
 
 	private void MoveCharacter() {
-		Vector3 movement = new Vector3(moveVals.y,0f,-moveVals.x);
-		if(movement != Vector3.zero) {
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-			transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
+		//Get normalized directional vectors of the cameras
+		Vector3 camForward = Camera.main.transform.forward;
+		Vector3 camRight = Camera.main.transform.right;
+		camForward.y = 0;
+		camRight.y = 0;
+		camForward = camForward.normalized;
+		camRight = camRight.normalized;
+
+		//get direction-relative input vectors
+		Vector3 forwardRelativeVerticalInput = moveVals.y * camForward;
+		Vector3 rightRelativeVerticalInput = moveVals.x * camRight;
+
+		//get camera relative movement vector
+		Vector3 camRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+		if(camRelativeMovement != Vector3.zero) {
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
+			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
 		}
 	}
 
