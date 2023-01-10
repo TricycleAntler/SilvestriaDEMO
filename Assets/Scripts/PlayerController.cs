@@ -21,8 +21,9 @@ public class PlayerController : MonoBehaviour
 	private bool itemDragStarted;
 	private bool inventoryOpened;
 	private bool playerAutoMove;
-
     public bool PlayerAutoMove { get => playerAutoMove; set => playerAutoMove = value; }
+
+	//testing INK script variable changes
 
     void Awake()
 	{
@@ -47,33 +48,46 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		MoveCharacter();
 		//player moves to the position where the seed is dropped
 		if(PlayerAutoMove) {
+			agent.isStopped = false;
 			agent.SetDestination(dropPosition);
-			PlayerAutoMove = false;
+			float playerXPos = transform.position.x;
+			float destinationXPos = dropPosition.x;
+			if(playerXPos == destinationXPos) {
+				Debug.Log("Disabling nav mesh agent");
+				PlayerAutoMove = false;
+				agent.isStopped = true;
+				//testing
+				//Have a dialogueVariables object in a singleton instance (quest system) to access ink variables
+				//DialogueManager.Instance.dialogueVariables.ModifyGlobalVars();
+			}
 		}
+		MoveCharacter();
 		SetInventoryActiveStatus();
 	}
 
 	public void OnPlayerMove(InputAction.CallbackContext context) {
-		//get player input values 
+		//get player input values
 		moveVals = context.ReadValue<Vector2>();
 	}
 
 	public void OnMouseClick(InputAction.CallbackContext context) {
-		RaycastHit hit;
-		Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-		//this bool checks if there is something over the UI
-		if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
-		{
-			ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
-			if(itemTemplate != null) {
-				Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
-				inventoryObject.AddItem(itemTemplate.GetItem());
-				itemTemplate.DestroyItemTemplate();
+		if(context.performed) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+			//this bool checks if there is something over the UI
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
+			{
+				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
+				if(itemTemplate != null) {
+					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
+					inventoryObject.AddItem(itemTemplate.GetItem());
+					itemTemplate.DestroyItemTemplate();
+				}
 			}
 		}
+
 	}
 
 	private void MoveCharacter() {
@@ -94,6 +108,7 @@ public class PlayerController : MonoBehaviour
 		if(camRelativeMovement != Vector3.zero) {
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
 			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
+			//agent.Move(camRelativeMovement * moveSpeed * Time.deltaTime);
 		}
 	}
 
@@ -114,6 +129,7 @@ public class PlayerController : MonoBehaviour
 		dropPosition = position;
 		PlayerAutoMove = true;
 	}
+
 
 		/*
 		if (Input.GetMouseButtonDown(1))
