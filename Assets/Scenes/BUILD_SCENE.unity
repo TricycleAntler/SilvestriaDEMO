@@ -646,15 +646,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.b
-      value: 0.1508086
+      value: 0.26741976
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.g
-      value: 0.11496403
+      value: 0.20798299
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.r
-      value: 0.043334186
+      value: 0.08613937
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsScale
@@ -670,15 +670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.b
-      value: 0.08632343
+      value: 0.08619977
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.g
-      value: 0.16480023
+      value: 0.1646558
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.r
-      value: 0.2734124
+      value: 0.27326003
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreStrength
@@ -714,15 +714,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.b
-      value: 0.35841295
+      value: 0.35826057
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.g
-      value: 0.30809784
+      value: 0.3079455
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.r
-      value: 0.21806046
+      value: 0.21790808
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection1
@@ -802,27 +802,27 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.b
-      value: 0.2922313
+      value: 0.29207894
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.g
-      value: 0.2922313
+      value: 0.29207894
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.r
-      value: 0.2922313
+      value: 0.29207894
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.b
-      value: 0.33833873
+      value: 0.33818638
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.g
-      value: 0.33833873
+      value: 0.33818638
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.r
-      value: 0.3678421
+      value: 0.36768973
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: intersectionFoamBlend
@@ -2216,15 +2216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.b
-      value: 0.15080851
+      value: 0.26741958
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.g
-      value: 0.11496394
+      value: 0.20798281
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.r
-      value: 0.04333412
+      value: 0.08613921
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsScale
@@ -2240,15 +2240,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.b
-      value: 0.08632336
+      value: 0.08619962
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.g
-      value: 0.16480014
+      value: 0.16465563
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.r
-      value: 0.27341232
+      value: 0.27325985
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreStrength
@@ -2284,15 +2284,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.b
-      value: 0.35841286
+      value: 0.3582604
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.g
-      value: 0.30809775
+      value: 0.3079453
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.r
-      value: 0.21806034
+      value: 0.2179079
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection1
@@ -2372,27 +2372,27 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.b
-      value: 0.2922312
+      value: 0.29207873
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.g
-      value: 0.2922312
+      value: 0.29207873
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.r
-      value: 0.2922312
+      value: 0.29207873
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.b
-      value: 0.33833864
+      value: 0.33818617
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.g
-      value: 0.33833864
+      value: 0.33818617
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.r
-      value: 0.36784202
+      value: 0.36768955
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: intersectionFoamBlend
@@ -8284,15 +8284,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.b
-      value: 0.15080854
+      value: 0.26742324
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.g
-      value: 0.11496397
+      value: 0.2079863
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: deepColor.r
-      value: 0.04333414
+      value: 0.08614219
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: normalsScale
@@ -8308,15 +8308,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.b
-      value: 0.08632339
+      value: 0.08620257
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.g
-      value: 0.16480017
+      value: 0.16465911
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreColor.r
-      value: 0.27341235
+      value: 0.2732635
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shoreStrength
@@ -8352,15 +8352,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.b
-      value: 0.3584129
+      value: 0.35826406
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.g
-      value: 0.30809778
+      value: 0.30794898
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: shallowColor.r
-      value: 0.2180604
+      value: 0.21791157
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: waveDirection1
@@ -8440,27 +8440,27 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.b
-      value: 0.29223123
+      value: 0.29208243
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.g
-      value: 0.29223123
+      value: 0.29208243
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor1.r
-      value: 0.29223123
+      value: 0.29208243
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.b
-      value: 0.33833867
+      value: 0.33818987
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.g
-      value: 0.33833867
+      value: 0.33818987
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: surfaceFoamColor2.r
-      value: 0.36784205
+      value: 0.36769325
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: intersectionFoamBlend
@@ -56017,7 +56017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813cbf5d555ec7d439ae701b39c5a811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetTransform: {fileID: 1634121181}
+  _targetTransform: {fileID: 0}
   _rotationDegree: 90
   _rotationSpeed: 10
   _rotationThreshold: 0.5
