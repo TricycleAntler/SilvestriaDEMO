@@ -12,6 +12,9 @@ public class QuestGiver : MonoBehaviour
     //because the QuestMgr instance is not created when onEnable is being executed, hence subscribing is delayed.
     void Start() {
         QuestManager.Instance.dialogueVariables.OnQuestStarted += AssignQuestsToMgr;
+        foreach(QuestGoals quest in quests) {
+            quest.questState = QuestGoals.QuestState.Untouched;
+        }
     }
     public void AssignQuestsToMgr(string questGroup) {
         foreach(QuestGoals quest in quests) {

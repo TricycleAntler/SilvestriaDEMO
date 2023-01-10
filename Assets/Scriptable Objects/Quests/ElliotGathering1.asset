@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e7877cdb3a5914093a1dbfee20f050, type: 3}
   m_Name: ElliotGathering1
   m_EditorClassIdentifier: 
-  questGroup: 
-  questID: 
-  itemID: 0
-  questName: 
-  questDescription: 
-  questType: 0
-  questState: 0
-  amountToCollect: 0
+  questGroup: elliot1
+  questID: elliotGatherQuest1
+  itemID: 1
+  questName: Gatherer
+  questDescription: Gather 3 Berries
+  questType: 1
+  questState: 1
+  amountToCollect: 3
