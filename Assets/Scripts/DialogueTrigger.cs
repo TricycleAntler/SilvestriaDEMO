@@ -18,7 +18,6 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Character Identifier")]
     [SerializeField] private string characterName;
     public static event Action<TextAsset,string> OnDialogueActivated; //event that triggers character dialogues
-
     private bool playerInRange;
     private bool dialogueActivated;
 
@@ -54,7 +53,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             dialogueActivated = false;
         }
-        
     }
     private void ActivateDialogueMode(InputAction.CallbackContext context)
     {

@@ -11,7 +11,7 @@ public class Inventory
     public Inventory() {
         itemList = new List<Item>();
 
-        AddItem(new Item {itemType = Item.ItemType.Berry, amount = 2});
+        //AddItem(new Item {itemType = Item.ItemType.Berry, amount = 2});
         Debug.Log("Inventory");
 
     }
@@ -19,6 +19,7 @@ public class Inventory
     public void AddItem(Item item) {
         if(item.IsStackable()) {
             bool itemAlreadyExistInInventory = false;
+            Debug.Log(itemAlreadyExistInInventory); //inv check
             foreach(Item invItem in itemList) {
                 if(invItem.itemType == item.itemType) {
                     invItem.amount += 1;
