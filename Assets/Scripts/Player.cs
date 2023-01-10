@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
         inventory = new Inventory();
 
         //testing
-        ItemTemplate.SpawnItem(new Vector3(428f,4.5f,577f), new Item{itemType = Item.ItemType.Oak, amount = 1});
+        //ItemTemplate.SpawnItem(new Vector3(428f,4.5f,577f), new Item{itemID = 1, amount = 1});
+
     }
 
     public void DisplayInventory() {
