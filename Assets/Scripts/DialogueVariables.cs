@@ -50,7 +50,7 @@ public class DialogueVariables
             //extra caution
             string keyValue = variable.Key;
             string key = keyValue.ToLower();
-            string val = ((Ink.Runtime.StringValue) this.GetVariableState(variable.Key)).value;
+            int val = ((Ink.Runtime.IntValue) this.GetVariableState(variable.Key)).value;
             string quest_id = key+val;
             if(quest_id == qid) {
                 return keyValue;
@@ -84,10 +84,6 @@ public class DialogueVariables
             dialogueVars.Remove(name);
             dialogueVars.Add(name, val);
             CheckQuestStartedState(name);
-        }
-        //check if quest started is true
-        foreach(var nam in dialogueVars) {
-            Debug.Log("Key : "+nam.Key + "Value : "+nam.Value);
         }
     }
 

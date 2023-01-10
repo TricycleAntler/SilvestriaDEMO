@@ -9,11 +9,14 @@ public class GatheringQuests : QuestGoals
     private int currentCollectedAmount;
     public override void StartQuest()
     {
+        Debug.Log("Quest Starting Gathering Quest");
         questType = QuestType.Gathering;
+        Debug.Log("Quest Type : "+questType);
         currentCollectedAmount = 0;
         for(int i = 0; i< amountToCollect; i++) {
-            ItemTemplate.SpawnItem(new Vector3(428f,4.5f,577f), new Item{itemID = this.itemID, amount = 1});
-            Debug.Log("Instantiated");
+            Vector3 spawnPosition = ItemTemplate.CalculateSpawnPosition();
+            ItemTemplate.SpawnItem(spawnPosition, new Item{itemID = this.itemID, amount = 1});
+            Debug.Log("Item Spawned");
         }
         questState = QuestState.Started;
         //throw new System.NotImplementedException();

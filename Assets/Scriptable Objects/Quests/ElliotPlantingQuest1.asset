@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e219e5e8421d6fe43979078ab85f224e, type: 3}
   m_Name: ElliotPlantingQuest1
   m_EditorClassIdentifier: 
-  questGroup: 
-  questID: 
-  itemID: 0
-  questName: 
-  questDescription: 
+  questGroup: elliot1
+  questID: elliotPlantQuest1
+  itemID: 1
+  questName: Planter
+  questDescription: Plant 3 Berries
   questType: 0
-  questState: 0
-  amountToPlant: 0
+  questState: 1
+  amountToPlant: 3
