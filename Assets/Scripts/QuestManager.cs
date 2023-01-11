@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     [SerializeField] private TextAsset loadGlobalsJSON;
-    [SerializeField] private List<QuestGoals> questList;
+    [SerializeField] public List<QuestGoals> questList;
     public DialogueVariables dialogueVariables;
     public static QuestManager Instance;
 
