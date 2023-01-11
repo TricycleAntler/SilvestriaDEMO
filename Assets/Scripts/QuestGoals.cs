@@ -25,4 +25,16 @@ public abstract class QuestGoals : ScriptableObject
         questState = QuestState.Completed;
         Debug.Log("Quest Completed :" + questID);
    }
+
+    public virtual Sprite GetQuestStateSprite()
+    {
+        switch (questState)
+        {
+            default:
+            case QuestState.Started:
+                return QuestStateAssets.Instance.questInProgressSprite;
+            case QuestState.Completed:
+                return QuestStateAssets.Instance.questCompletedSprite;
+        }
+    }
 }
