@@ -8,25 +8,43 @@ INCLUDE globals.ink
 
  
 === scene_1 ===
-Hello, little one I am glad to see you are alive.  #speaker:Moose #portrait:Moose #layout:Right #speed:30
-Are you alright otherwise?
-The storm seems to have washed you downstream, it is a wonder you are alive.#speaker:Moose #portrait:Moose #layout:Right #speed:30
-Hi, no I seem fine. . . just wet and tired. Where am I?  #speaker:Sylvester #portrait:Sylvester #layout:Left #speed:30
-A tiny isle in the stream I enjoy visiting. Sadly it seems to have been hit by the storm too. The lightning caused a fire. :(    #speaker:Moose #portrait:Moose #layout:Right #speed:30
-I am sorry to hear that and I wish I could help. But I need to get back home. #speaker:Sylvester #portrait:Sylvester #layout:Left #speed:30
-I believe we can help one another. You help me to replant some of the lost plants and I will give you a ride across the water. #speaker:Moose #portrait:Moose #layout:Right #speed:30
+Hello, little one. I am glad to see you are alive.  #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+Are you alright? #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+Hi. I seem fine... just tired and wet. #speaker:Silvester #portrait:Sylvester #layout:Left #speed:30
+
+The storm seems to have washed you downstream, it is a wonder you are alive!#speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+Where am I?  #speaker:Silvester #portrait:Sylvester #layout:Left #speed:30
+
+A tiny isle in the stream I enjoy visiting. #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+Sadly it seems to have been hit by the storm too. #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+The lightning caused a fire. :(    #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+I am sorry to hear that... #speaker:Silvester #portrait:Sylvester #layout:Left #speed:30
+
+I wish I could help, but I need to find a new home. #speaker:Silvester #portrait:Sylvester #layout:Left #speed:30
+
+I believe we can help one another.#speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+There should be some berries lying around here somewhere. #speaker:Elliot #portrait:Moose #layout:Right #speed:30
+
+If you collect them and plant them in the burnt area over there, I'll help you across the river! #speaker:Elliot #portrait:Moose #layout:Right #speed:30
 ~ elliot_quest_started = true
 -> END
 
 === already_started ===
-Did you find and plant the berries?.#speaker:Moose #portrait:Moose #layout:Right #speed:30
-No I'm still working on it.  #speaker:Sylvester #portrait:Sylvester #layout:Left #speed:30
-Ok. I'll talk to you when its done.#speaker:Moose #portrait:Moose #layout:Right #speed:30
+Have you found and planted the berries?#speaker:Elliot #portrait:Moose #layout:Right #speed:30
+No, not yet.  #speaker:Silvester #portrait:Sylvester #layout:Left #speed:30
+Okay, get back to me when you're done!#speaker:Elliot #portrait:Moose #layout:Right #speed:30
 ->END
 
 === quest_finished ===
-Congratulations!! You Did it.#speaker:Moose #portrait:Moose #layout:Right #speed:30
-Lets Move Onto the next task.#speaker:Moose #portrait:Moose #layout:Right #speed:30
+Thank you so much!#speaker:Elliot #portrait:Elliot #layout:Right #speed:30
+Now let's get you across that river.#speaker:Elliot #portrait:Moose #layout:Right #speed:30
 ~ elliot_quest_started = false
 ~ elliot_quest_completed = false
 ~ elliot = elliot + 1
