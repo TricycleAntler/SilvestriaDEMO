@@ -5,6 +5,7 @@ using System;
 public class Player : MonoBehaviour
 {
     [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] private UI_Journal uiJournal;
     private Inventory inventory;
     void Awake() {
         inventory = new Inventory();
@@ -21,6 +22,19 @@ public class Player : MonoBehaviour
         else {
             uiInventory.gameObject.SetActive(true);
             uiInventory.SetInventory(inventory);
+        }
+    }
+
+    public void DisplayJournal()
+    {
+        if (uiJournal.gameObject.activeInHierarchy)
+        {
+            uiJournal.gameObject.SetActive(false);
+        }
+        else
+        {
+            uiJournal.gameObject.SetActive(true);
+            uiJournal.DisplayQuestList();
         }
     }
 
