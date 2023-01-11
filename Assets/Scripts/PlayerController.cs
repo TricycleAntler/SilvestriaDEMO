@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
 				if(itemTemplate != null) {
 					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
 					inventoryObject.AddItem(itemTemplate.GetItem());
+					QuestManager.Instance.CheckCollectingQuestStatus(itemTemplate.GetItem().itemID);
 					itemTemplate.DestroyItemTemplate();
 				}
 			}

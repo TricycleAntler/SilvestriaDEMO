@@ -11,6 +11,15 @@ public class ItemTemplate : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public static Vector3 CalculateSpawnPosition() {
+        float x = Random.Range(427f,440f);
+        float y = 4.5f;
+        float z = Random.Range(568f,583f);
+
+        Vector3 spawnPosition = new Vector3(x,y,z);
+        return spawnPosition;
+    }
+
     public static void SpawnItem(Vector3 position, Item item) {
         Transform transform = Instantiate(ItemAssets.Instance.itemTemplatePrefab,position, Quaternion.identity);
         ItemTemplate itemTemplate = transform.GetComponent<ItemTemplate>();

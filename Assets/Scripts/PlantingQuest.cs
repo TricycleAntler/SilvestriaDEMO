@@ -10,7 +10,9 @@ public class PlantingQuest : QuestGoals
     private int currentPlantedAmount;
     public override void StartQuest()
     {
+        Debug.Log("Quest Starting Planting Quest");
         questType = QuestType.Planting;
+        Debug.Log("Quest Type : "+questType);
         currentPlantedAmount = 0;
         for(int i = 0; i< amountToPlant; i++) {
             //ItemTemplate.SpawnItem(new Vector3(428f,4.5f,577f), new Item{itemID = this.itemID, amount = 1});
