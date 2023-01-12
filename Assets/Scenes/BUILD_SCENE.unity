@@ -25331,7 +25331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14143912
+      value: -0.14143914
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
@@ -61141,7 +61141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusDistanceNormal: 3
-  focusDistanceDialogueMode: 1
+  focusDistanceInteraction: 1
   volume: {fileID: 1781461111}
 --- !u!1001 &1782215628
 PrefabInstance:
@@ -65724,6 +65724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiInventory: {fileID: 658242209}
+  postProcessingEffects: {fileID: 1781461113}
   uiJournal: {fileID: 942435726}
 --- !u!54 &1916545406
 Rigidbody:
