@@ -1466,6 +1466,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1508379776}
     m_Modifications:
+    - target: {fileID: 561171376856161401, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0416
+      objectReference: {fileID: 0}
+    - target: {fileID: 561171376856161401, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7733
+      objectReference: {fileID: 0}
     - target: {fileID: 1368140115219596085, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1532,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815617571648814796, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014737122612612244, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
       propertyPath: characterName
@@ -6728,6 +6736,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 172622785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &177754266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1662025360948164589, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
+  m_PrefabInstance: {fileID: 1662025361802921772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &177754270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177754266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1405815554
+      Data2: 1206523475
+      Data3: -234714197
+      Data4: 189527602
+    Path: event:/UI/UI_Journal_Close
+  Event: 
+  PlayEvent: 12
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &177754271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177754266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2058026509
+      Data2: 1156628002
+      Data3: 1952233912
+      Data4: 2037398942
+    Path: event:/UI/UI_Journal_Open
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &177965398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11776,6 +11849,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 369462548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &374029539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7551679580218953485, guid: 3f47f53e46516fa40af844b68ec907c8, type: 3}
+  m_PrefabInstance: {fileID: 658242207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &374029543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374029539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1158134479
+      Data2: 1298749627
+      Data3: 1931713930
+      Data4: -1219348814
+    Path: event:/UI/UI_SeedBag_open
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &374029544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374029539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1853422849
+      Data2: 1168313509
+      Data3: 1386998169
+      Data4: -761453395
+    Path: event:/UI/UI_SeedBag_close
+  Event: 
+  PlayEvent: 12
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &374586559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38518,6 +38656,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 25201b8ae7721d646a3b70214101cef9, type: 2}
     - target: {fileID: 5512026211554140995, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026211554140995, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -38654,8 +38796,32 @@ PrefabInstance:
       value: 4.6951
       objectReference: {fileID: 0}
     - target: {fileID: 5512026212390563502, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7989943
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212390563502, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8520144
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212390563502, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212390563502, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_PreserveAspect
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212515158279, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212515158279, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512026212515158279, guid: 2c528091ee782344f84bc4794999176b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5512026212633312779, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -38720,7 +38886,7 @@ PrefabInstance:
     - target: {fileID: 5512026212880387233, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1bdb9d0083f68824e93b49325ae7f903, type: 3}
+      objectReference: {fileID: 21300000, guid: 165b03e6aad21964d8dbfc5ecf21d973, type: 3}
     - target: {fileID: 5512026212880387233, guid: 2c528091ee782344f84bc4794999176b, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -56162,6 +56328,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 1645370959}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646319535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8815617571648814796, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
+  m_PrefabInstance: {fileID: 50477228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1646319538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646319535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1824795259
+      Data2: 1133754993
+      Data3: -1541121377
+      Data4: 768926989
+    Path: event:/UI/UI_Select
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1647444437
 PrefabInstance:
   m_ObjectHideFlags: 0
