@@ -47,6 +47,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             //Vector3 spawnPosition = new Vector3(x,itemSpawnPosY,z);
             //ItemTemplate.SpawnItem(spawnPosition,GetComponent<ItemTemplate>().GetItem()); //change this to the tree object/anim that should be spawned
             OnSeedDrop?.Invoke(hit.point);
+            //JUST TO TEST PLANTING STATS. DO NOT KEEP THIS LINE OF CODE!!
+            QuestManager.Instance.CheckPlantingQuestStatus(GetComponent<ItemTemplate>().GetItem().itemID);
             inventory.DropItem(GetComponent<ItemTemplate>().GetItem());
         }
         else {

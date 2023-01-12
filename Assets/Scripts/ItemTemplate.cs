@@ -11,13 +11,42 @@ public class ItemTemplate : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public static ItemTemplate SpawnItem(Vector3 position, Item item) {
-        Transform transform = Instantiate(ItemAssets.Instance.itemTemplatePrefab,position, Quaternion.identity);
+    public static Vector3 CalculateSpawnPosition() {
+        float x = Random.Range(427f,440f);
+        float y = 4.5f;
+        float z = Random.Range(568f,583f);
 
-        ItemTemplate itemTemplate = transform.GetComponent<ItemTemplate>();
-        itemTemplate.SetItem(item);
-        return itemTemplate;
+        Vector3 spawnPosition = new Vector3(x,y,z);
+        return spawnPosition;
     }
+
+    public static void SpawnItem(Vector3 position, Item item) {
+        Transform transform = Instantiate(ItemAssets.Instance.itemTemplatePrefab,position, Quaternion.identity);
+        ItemTemplate itemTemplate = transform.GetComponent<ItemTemplate>();
+        itemTemplate.SetItemType(item);
+        itemTemplate.SetItem(item);
+        //return itemTemplate;
+    }
+
+    public void SetItemType(Item item) {
+        switch(item.itemID){
+            case 1 :
+                item.itemType = Item.ItemType.Berry;
+                break;
+            case 2 :
+                item.itemType = Item.ItemType.Oak;
+                break;
+            case 3 :
+                item.itemType = Item.ItemType.DryGrass;
+                break;
+            case 4 :
+                item.itemType = Item.ItemType.GreenGrass;
+                break;
+            default :
+                break;
+        }
+    }
+
     public void SetItem(Item item) {
         this.item = item;
         spriteRenderer.sprite = item.GetSprite();

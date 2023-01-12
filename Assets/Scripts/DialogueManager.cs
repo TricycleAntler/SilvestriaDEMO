@@ -7,6 +7,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
+
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputProvider;
@@ -14,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Animator dialoguePanelAnim;
     [SerializeField] private GameObject dialogueBox;
+    [Header("Global Vars Ink File")]
 
     private float textSpeed;
     private float textSpeedInMilSecs;
@@ -24,13 +26,12 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueIsPlaying;
     private bool isTyping = false;
     private string playerCurrentlySpeakingTo;
-
     private const string SPEAKER = "speaker";
     private const string PORTRAIT = "portrait";
     private const string LAYOUT = "layout";
     private const string SPEED = "speed";
 
-    private static DialogueManager Instance;
+    public static DialogueManager Instance;
     public List<CharacterUiBehaviour> characterUIs = new List<CharacterUiBehaviour>();
     public static event Action<string> OnDialogueExit;
 
@@ -92,6 +93,8 @@ public class DialogueManager : MonoBehaviour
             story = new Story(inkJSON.text);
             playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
+
+            QuestManager.Instance.dialogueVariables.StartListening(story);
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
             dialogueBox.SetActive(true);
@@ -102,6 +105,7 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode() {
         OnDialogueExit?.Invoke(playerCurrentlySpeakingTo);
         dialogueIsPlaying = false;
+        QuestManager.Instance.dialogueVariables.StopListening(story);
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);

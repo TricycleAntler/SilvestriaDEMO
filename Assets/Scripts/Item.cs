@@ -11,6 +11,8 @@ public class Item {
     //Pine
   }
 
+  public int itemID;
+  //item id for berries =1, oak =2,
   public ItemType itemType;
   public int amount;
 
