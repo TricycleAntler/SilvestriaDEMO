@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
             story = new Story(inkJSON.text);
             playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
-            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceDialogueMode);
+            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
             QuestManager.Instance.dialogueVariables.StartListening(story);
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
