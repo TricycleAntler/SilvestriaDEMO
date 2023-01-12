@@ -11,6 +11,7 @@ using UnityEngine.InputSystem;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputProvider;
+    [SerializeField] private PostProcessingEffects postProcessingEffects;
     [SerializeField] private GameObject speaker;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Animator dialoguePanelAnim;
@@ -19,6 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     private float textSpeed;
     private float textSpeedInMilSecs;
+    private float focusDistanceNormal = 3f;
+    private float focusDistanceDialogueMode = 1f;
     private Story story;
     private TextMeshProUGUI nametag;
     private TextMeshProUGUI textBody;
@@ -93,7 +96,7 @@ public class DialogueManager : MonoBehaviour
             story = new Story(inkJSON.text);
             playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
-
+            postProcessingEffects.ChangeDepthOfField(focusDistanceDialogueMode);
             QuestManager.Instance.dialogueVariables.StartListening(story);
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
@@ -106,6 +109,7 @@ public class DialogueManager : MonoBehaviour
         OnDialogueExit?.Invoke(playerCurrentlySpeakingTo);
         dialogueIsPlaying = false;
         QuestManager.Instance.dialogueVariables.StopListening(story);
+        postProcessingEffects.ChangeDepthOfField(focusDistanceNormal);
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);
