@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class PostProcessingEffects : MonoBehaviour
 {
+    public float focusDistanceNormal = 3f;
+    public float focusDistanceInteraction = 1f;
     public Volume volume;
     private VolumeProfile volumeProfile;
     private void Awake()
     {
         volumeProfile = volume.sharedProfile;
-        
+        ChangeDepthOfField(focusDistanceNormal);         
     }
     public void ChangeDepthOfField(float val)
     {
