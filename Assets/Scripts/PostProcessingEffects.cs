@@ -13,8 +13,7 @@ public class PostProcessingEffects : MonoBehaviour
     private void Awake()
     {
         volumeProfile = volume.sharedProfile;
-        ChangeDepthOfField(focusDistanceNormal); 
-        
+        ChangeDepthOfField(focusDistanceNormal);         
     }
     public void ChangeDepthOfField(float val)
     {

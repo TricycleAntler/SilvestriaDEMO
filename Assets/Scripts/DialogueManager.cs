@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     private float textSpeed;
     private float textSpeedInMilSecs;
+    private float focusDistanceNormal = 3f;
+    private float focusDistanceDialogueMode = 1f;
     private Story story;
     private TextMeshProUGUI nametag;
     private TextMeshProUGUI textBody;
