@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 using System;
 
 public class PlayerController : MonoBehaviour
@@ -12,15 +13,17 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
 	[SerializeField] private UI_Inventory uiInventory;
-
-	//private bool _isGrounded = true;
+	[SerializeField] private InputActionAsset inputProvider;
+	[SerializeField] private float moveSpeed = 2f;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 	private Vector3 dropPosition;
+	private Vector2 moveVals;
 	private bool itemDragStarted;
 	private bool inventoryOpened;
 	private bool playerAutoMove;
-
     public bool PlayerAutoMove { get => playerAutoMove; set => playerAutoMove = value; }
+
+	//testing INK script variable changes
 
     void Awake()
 	{
@@ -33,38 +36,81 @@ public class PlayerController : MonoBehaviour
 			agent = GetComponent<NavMeshAgent>();
 		}
 		//SetUpRigidbody();
+		//inputProvider.FindActionMap("PlayerMovements").FindAction("Directional Movements").performed += ManagePlayerMovement;
 	}
 
 	void OnEnable() {
+		inputProvider.FindAction("Directional Movements").Enable();
+		inputProvider.FindAction("Item Pickup").Enable();
 		DragAndDrop.OnUIActionStart += SetItemDragBool;
 		DragAndDrop.OnSeedDrop += GetItemDropPosition;
 	}
 
 	void Update()
 	{
+		//player moves to the position where the seed is dropped
+		if(PlayerAutoMove) {
+			agent.isStopped = false;
+			agent.SetDestination(dropPosition);
+			float playerXPos = transform.position.x;
+			float destinationXPos = dropPosition.x;
+			if(playerXPos == destinationXPos) {
+				Debug.Log("Disabling nav mesh agent");
+				PlayerAutoMove = false;
+				agent.isStopped = true;
+				//testing
+				//Have a dialogueVariables object in a singleton instance (quest system) to access ink variables
+				//DialogueManager.Instance.dialogueVariables.ModifyGlobalVars();
+			}
+		}
+		MoveCharacter();
+		SetInventoryActiveStatus();
+	}
 
-		if (Input.GetMouseButton(0))
-		{
+	public void OnPlayerMove(InputAction.CallbackContext context) {
+		//get player input values
+		moveVals = context.ReadValue<Vector2>();
+	}
+
+	public void OnMouseClick(InputAction.CallbackContext context) {
+		if(context.performed) {
 			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 			//this bool checks if there is something over the UI
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
 			{
 				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
-				if(itemTemplate != null){
+				if(itemTemplate != null) {
 					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
 					inventoryObject.AddItem(itemTemplate.GetItem());
+					QuestManager.Instance.CheckCollectingQuestStatus(itemTemplate.GetItem().itemID);
 					itemTemplate.DestroyItemTemplate();
 				}
-				agent.SetDestination(hit.point);
 			}
 		}
-		//player moves to the position where the seed is dropped
-		if(PlayerAutoMove) {
-			agent.SetDestination(dropPosition);
-			PlayerAutoMove = false;
+
+	}
+
+	private void MoveCharacter() {
+		//Get normalized directional vectors of the cameras
+		Vector3 camForward = Camera.main.transform.forward;
+		Vector3 camRight = Camera.main.transform.right;
+		camForward.y = 0;
+		camRight.y = 0;
+		camForward = camForward.normalized;
+		camRight = camRight.normalized;
+
+		//get direction-relative input vectors
+		Vector3 forwardRelativeVerticalInput = moveVals.y * camForward;
+		Vector3 rightRelativeVerticalInput = moveVals.x * camRight;
+
+		//get camera relative movement vector
+		Vector3 camRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+		if(camRelativeMovement != Vector3.zero) {
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
+			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
+			//agent.Move(camRelativeMovement * moveSpeed * Time.deltaTime);
 		}
-		SetInventoryActiveStatus();
 	}
 
 	public void SetItemDragBool(bool dragVal) {
@@ -84,6 +130,7 @@ public class PlayerController : MonoBehaviour
 		dropPosition = position;
 		PlayerAutoMove = true;
 	}
+
 
 		/*
 		if (Input.GetMouseButtonDown(1))
@@ -162,6 +209,8 @@ public class PlayerController : MonoBehaviour
 			//_isGrounded = true;
 
 	void OnDisable() {
+		inputProvider.FindAction("Directional Movements").Disable();
+		inputProvider.FindAction("Item Pickup").Disable();
 		DragAndDrop.OnUIActionStart -= SetItemDragBool;
 		DragAndDrop.OnSeedDrop -= GetItemDropPosition;
 	}

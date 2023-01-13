@@ -7,16 +7,21 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
+
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputProvider;
+    [SerializeField] private PostProcessingEffects postProcessingEffects;
     [SerializeField] private GameObject speaker;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Animator dialoguePanelAnim;
     [SerializeField] private GameObject dialogueBox;
+    [Header("Global Vars Ink File")]
 
     private float textSpeed;
     private float textSpeedInMilSecs;
+    private float focusDistanceNormal = 3f;
+    private float focusDistanceDialogueMode = 1f;
     private Story story;
     private TextMeshProUGUI nametag;
     private TextMeshProUGUI textBody;
@@ -24,13 +29,12 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueIsPlaying;
     private bool isTyping = false;
     private string playerCurrentlySpeakingTo;
-
     private const string SPEAKER = "speaker";
     private const string PORTRAIT = "portrait";
     private const string LAYOUT = "layout";
     private const string SPEED = "speed";
 
-    private static DialogueManager Instance;
+    public static DialogueManager Instance;
     public List<CharacterUiBehaviour> characterUIs = new List<CharacterUiBehaviour>();
     public static event Action<string> OnDialogueExit;
 
@@ -40,6 +44,7 @@ public class DialogueManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
         Instance = this;
         textBody = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
         inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
@@ -92,6 +97,8 @@ public class DialogueManager : MonoBehaviour
             story = new Story(inkJSON.text);
             playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
+            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
+            QuestManager.Instance.dialogueVariables.StartListening(story);
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
             dialogueBox.SetActive(true);
@@ -102,6 +109,8 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode() {
         OnDialogueExit?.Invoke(playerCurrentlySpeakingTo);
         dialogueIsPlaying = false;
+        QuestManager.Instance.dialogueVariables.StopListening(story);
+        postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);
