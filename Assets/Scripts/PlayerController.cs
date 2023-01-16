@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private UI_Inventory uiInventory;
 	[SerializeField] private InputActionAsset inputProvider;
 	[SerializeField] private float moveSpeed = 2f;
+	//[SerializeField] private Animator frontAnim;
+	[SerializeField] private Animator sideAnim;
+	//[SerializeField] private Animator backAnim;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 	private Vector3 dropPosition;
 	private Vector2 moveVals;
@@ -110,7 +113,17 @@ public class PlayerController : MonoBehaviour
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
 			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
 			//agent.Move(camRelativeMovement * moveSpeed * Time.deltaTime);
+			SetCharacterAnimations(true);
 		}
+		else
+        {
+			SetCharacterAnimations(false);
+		}
+	}
+
+	private void SetCharacterAnimations(bool state)
+    {
+		sideAnim.SetBool("isRunning", state);
 	}
 
 	public void SetItemDragBool(bool dragVal) {
