@@ -11,14 +11,16 @@ using UnityEngine.InputSystem;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset inputProvider;
-    [SerializeField] private GameObject speaker;
+    [SerializeField] private PostProcessingEffects postProcessingEffects;
+    [SerializeField] private List<GameObject> speakers;
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private Animator dialoguePanelAnim;
     [SerializeField] private GameObject dialogueBox;
     [Header("Global Vars Ink File")]
-
+    private GameObject speakerObj;
     private float textSpeed;
     private float textSpeedInMilSecs;
+    private float focusDistanceNormal = 3f;
+    private float focusDistanceDialogueMode = 1f;
     private Story story;
     private TextMeshProUGUI nametag;
     private TextMeshProUGUI textBody;
@@ -41,6 +43,7 @@ public class DialogueManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
         Instance = this;
         textBody = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
         inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
@@ -71,10 +74,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case PORTRAIT:
                     SetPortrait(tagValue);
-                    SetPortraitAnimations(dialoguePanelAnim,tagValue);
                     break;
                 case LAYOUT:
-                    AdjustSpriteScale(tagValue);
+                    AdjustPortrait(tagValue);
                     break;
                 case SPEED:
                     SetTextSpeed(float.Parse(tagValue));
@@ -93,7 +95,7 @@ public class DialogueManager : MonoBehaviour
             story = new Story(inkJSON.text);
             playerCurrentlySpeakingTo = characterName;
             dialogueIsPlaying = true;
-
+            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
             QuestManager.Instance.dialogueVariables.StartListening(story);
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
@@ -106,6 +108,7 @@ public class DialogueManager : MonoBehaviour
         OnDialogueExit?.Invoke(playerCurrentlySpeakingTo);
         dialogueIsPlaying = false;
         QuestManager.Instance.dialogueVariables.StopListening(story);
+        postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);
@@ -130,7 +133,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void SetSpeakerName(string tagValue) {
-        speaker.transform.Find("CharacterNamePanel").gameObject.GetComponentInChildren<TextMeshProUGUI>().text = tagValue;
+        
+        speakerObj.transform.Find("CharacterNamePanel").gameObject.GetComponentInChildren<TextMeshProUGUI>().text = tagValue;
     }
 
     private void SetTextSpeed(float speedVal) {
@@ -140,18 +144,46 @@ public class DialogueManager : MonoBehaviour
     private void SetPortrait(string tagValue) {
         foreach(CharacterUiBehaviour characterUI in characterUIs) {
             if(characterUI.tagName == tagValue){
-                speaker.gameObject.GetComponentInChildren<Image>().sprite = characterUI.characterSprite;
+                speakerObj.gameObject.GetComponentInChildren<Image>().sprite = characterUI.characterSprite;
                 return;
             }
         }
     }
 
-    private void AdjustSpriteScale(string tagValue) {
+    private void AdjustPortrait(string tagValue) {
         if(tagValue == "Left") {
-            speaker.transform.Find("CharacterImage").gameObject.transform.localScale = new Vector3(-1,1,1);
+            foreach(GameObject speaker in speakers)
+            {
+                if (speaker.name == "CharacterPortrait")
+                {
+                    speakerObj = speaker;
+                    speaker.SetActive(true);
+                    speaker.transform.Find("CharacterImage").gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    speaker.SetActive(false);  
+                }
+                
+                
+            }
         }
         else {
-            speaker.transform.Find("CharacterImage").gameObject.transform.localScale = new Vector3(1,1,1);
+            foreach(GameObject speaker in speakers)
+            {
+                if (speaker.name == "CharacterPortraitNPC")
+                {
+                    speakerObj = speaker;
+                    speaker.SetActive(true);
+                    speaker.transform.Find("CharacterImage").gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    speaker.SetActive(false);
+                }
+                    
+            }
+            
         }
     }
 
@@ -160,20 +192,6 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         ContinueStory();
-    }
-
-    private void SetPortraitAnimations(Animator animator,string tagValue) {
-        foreach(CharacterUiBehaviour characterUI in characterUIs) {
-            if(characterUI.tagName == tagValue) {
-                string animName = characterUI.animClip.name;
-                foreach(AnimationClip clip in animator.runtimeAnimatorController.animationClips) {
-                    if(clip.name == animName){
-                        animator.Play(clip.name);
-                        return;
-                    }
-                }
-            }
-        }
     }
 
     private IEnumerator DisplayText(string currentText)
