@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private InputActionAsset inputProvider;
 	[SerializeField] private float moveSpeed = 2f;
 	//[SerializeField] private Animator frontAnim;
-	[SerializeField] private Animator sideAnim;
+	//2D anim movement properties
+	[SerializeField] private Animator anim;
+	[SerializeField] private SpriteRenderer sr;
 	//[SerializeField] private Animator backAnim;
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 	private Vector3 dropPosition;
@@ -25,7 +27,29 @@ public class PlayerController : MonoBehaviour
 	private bool inventoryOpened;
 	private bool playerAutoMove;
     public bool PlayerAutoMove { get => playerAutoMove; set => playerAutoMove = value; }
+	public PlayerStates currentState;
+	public enum PlayerStates
+    {
+		IDLE,
+		WALK
+    }
+	PlayerStates CurrentState
+    {
+		set
+        {
+			currentState = value;
 
+			switch(currentState)
+            {
+				case PlayerStates.IDLE:
+					anim.Play("Idle");
+					break;
+				case PlayerStates.WALK:
+					anim.Play("Movement");
+					break;
+			}
+        }
+    }
 	//testing INK script variable changes
 
     void Awake()
@@ -73,6 +97,26 @@ public class PlayerController : MonoBehaviour
 	public void OnPlayerMove(InputAction.CallbackContext context) {
 		//get player input values
 		moveVals = context.ReadValue<Vector2>();
+		if(moveVals != Vector2.zero)
+        {
+			CurrentState = PlayerStates.WALK;
+			anim.SetFloat("Horizontal", moveVals.x);
+			anim.SetFloat("Vertical", moveVals.y);
+
+			//Set character facing direction
+			if(moveVals.x > 0)
+            {
+				sr.flipX = true;
+            }
+			else if(moveVals.x < 0)
+            {
+				sr.flipX = false;
+            }
+        }
+        else
+        {
+			CurrentState = PlayerStates.IDLE;
+        }
 	}
 
 	public void OnMouseClick(InputAction.CallbackContext context) {
@@ -110,21 +154,12 @@ public class PlayerController : MonoBehaviour
 		//get camera relative movement vector
 		Vector3 camRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 		if(camRelativeMovement != Vector3.zero) {
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
+			//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
 			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
 			//agent.Move(camRelativeMovement * moveSpeed * Time.deltaTime);
-			SetCharacterAnimations(true);
-		}
-		else
-        {
-			SetCharacterAnimations(false);
 		}
 	}
 
-	private void SetCharacterAnimations(bool state)
-    {
-		sideAnim.SetBool("isRunning", state);
-	}
 
 	public void SetItemDragBool(bool dragVal) {
 		itemDragStarted = dragVal;
