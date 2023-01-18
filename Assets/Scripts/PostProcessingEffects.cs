@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PostProcessingEffects : MonoBehaviour
 {
-    public float focusDistanceNormal = 3f;
+    public float focusDistanceNormal = 4f;
     public float focusDistanceInteraction = 1f;
     public Volume volume;
     private VolumeProfile volumeProfile;
