@@ -24,13 +24,13 @@ namespace FMODUnity
 
         private static string FMODFolderFull => $"Assets/{RuntimeUtils.PluginBasePath}";
 
-        private const string CacheFolderName = "Cache";
-        private static string CacheFolderRelative => $"{RuntimeUtils.PluginBasePath}/{CacheFolderName}";
-        private static string CacheFolderFull => $"{FMODFolderFull}/{CacheFolderName}";
+        const string CacheFolderName = "Cache";
+        static string CacheFolderRelative => $"{RuntimeUtils.PluginBasePath}/{CacheFolderName}";
+        static string CacheFolderFull => $"{FMODFolderFull}/{CacheFolderName}";
 
-        private const string RegisterStaticPluginsFile = "RegisterStaticPlugins.cs";
-        private static string RegisterStaticPluginsAssetPathRelative => $"{CacheFolderRelative}/{RegisterStaticPluginsFile}";
-        private static string RegisterStaticPluginsAssetPathFull => $"{CacheFolderFull}/{RegisterStaticPluginsFile}";
+        const string RegisterStaticPluginsFile = "RegisterStaticPlugins.cs";
+        static string RegisterStaticPluginsAssetPathRelative => $"{CacheFolderRelative}/{RegisterStaticPluginsFile}";
+        static string RegisterStaticPluginsAssetPathFull => $"{CacheFolderFull}/{RegisterStaticPluginsFile}";
 
         [NonSerialized]
         private Dictionary<string, bool> binaryCompatibilitiesBeforeBuild;
@@ -52,12 +52,6 @@ namespace FMODUnity
             EditorApplication.ExecuteMenuItem("Window/General/Inspector");
         }
 
-        public void Clear()
-        {
-            PlatformForBuildTarget.Clear();
-            binaryCompatibilitiesBeforeBuild = null;
-        }
-
         public void CreateSettingsAsset(string assetName)
         {
             string resourcesPath = $"{FMODFolderFull}/Resources";
@@ -77,14 +71,7 @@ namespace FMODUnity
             {
                 if (buildTarget != BuildTarget.NoTarget)
                 {
-                    try
-                    {
-                        PlatformForBuildTarget.Add(buildTarget, platform);
-                    }
-                    catch (Exception e)
-                    {
-                        RuntimeUtils.DebugLogWarningFormat("FMOD: Error platform {0} already added to build targets. : {1}", buildTarget, e.Message);
-                    }
+                    PlatformForBuildTarget.Add(buildTarget, platform);
                 }
             }
         }
@@ -108,7 +95,7 @@ namespace FMODUnity
             RemovePlatformFromAsset(RuntimeSettings.DefaultPlatform);
             RemovePlatformFromAsset(RuntimeSettings.PlayInEditorPlatform);
 
-            RuntimeSettings.Platforms.ForEach(RemovePlatformFromAsset);
+            RuntimeSettings.ForEachPlatform(RemovePlatformFromAsset);
 
             foreach (Platform platform in Resources.LoadAll<Platform>(Settings.SettingsAssetName))
             {
@@ -337,7 +324,7 @@ namespace FMODUnity
                 RuntimeSettings.AddPlatform(platform);
             }
 
-            RuntimeSettings.Platforms.ForEach(UpdateMigratedPlatform);
+            RuntimeSettings.ForEachPlatform(UpdateMigratedPlatform);
         }
 
         private void MigrateLegacyPlatforms<TValue, TSetting>(List<TSetting> settings,
@@ -615,7 +602,7 @@ namespace FMODUnity
             RuntimeUtils.DebugLog(message);
         }
 
-        public bool ForceLoggingBinaries { get; set; } = false;
+        public bool ForceLoggingBinaries { get; private set; } = false;
 
         public class BuildProcessor : IPreprocessBuildWithReport, IPostprocessBuildWithReport
         {
@@ -681,14 +668,13 @@ namespace FMODUnity
         // Settings object.
         public void AddPlatformsToAsset()
         {
-            RuntimeSettings.Platforms.ForEach(AddPlatformToAsset);
+            RuntimeSettings.ForEachPlatform(AddPlatformToAsset);
         }
 
         private void AddPlatformToAsset(Platform platform)
         {
             if (!AssetDatabase.Contains(platform))
             {
-                platform.name = "FMODStudioSettingsPlatform";
                 AssetDatabase.AddObjectToAsset(platform, RuntimeSettings);
             }
         }
