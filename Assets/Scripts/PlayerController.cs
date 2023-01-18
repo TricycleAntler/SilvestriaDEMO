@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
 		//get camera relative movement vector
 		Vector3 camRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
 		if(camRelativeMovement != Vector3.zero) {
+			//Rotation is not necessary for the 2D sprites
 			//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camRelativeMovement), 0.15f);
 			transform.Translate(camRelativeMovement * moveSpeed * Time.deltaTime,Space.World);
 			//agent.Move(camRelativeMovement * moveSpeed * Time.deltaTime);
