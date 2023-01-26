@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f30ca0500243f64391e7b102da7d15a
+guid: e6418615e6761624e931b8b91cbab6fe
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -12,32 +12,35 @@ ModelImporter:
   - first:
       74: 825350510644428805
     second: rig.FRONT|rigAction
+  - first:
+      74: 3661015908707408998
+    second: rig.FRONT|rig.FRONTAction (1)
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 2100000, guid: 650cd28d1f6eb09419262275315e1afa, type: 2}
+    second: {fileID: 2100000, guid: 1a8d55f7383d8b54294f40b20aa5b943, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.002
-    second: {fileID: 2100000, guid: 650cd28d1f6eb09419262275315e1afa, type: 2}
+    second: {fileID: 2100000, guid: 9607a561cedfc7d40bd68894da60f21c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.003
-    second: {fileID: 2100000, guid: 650cd28d1f6eb09419262275315e1afa, type: 2}
+    second: {fileID: 2100000, guid: 80b9db39193c0e44c8732b63abc5da88, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.004
-    second: {fileID: 2100000, guid: 650cd28d1f6eb09419262275315e1afa, type: 2}
+    second: {fileID: 2100000, guid: fc5f8ad657e27214f9b940a4bfddaa3b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.005
-    second: {fileID: 2100000, guid: 650cd28d1f6eb09419262275315e1afa, type: 2}
+    second: {fileID: 2100000, guid: 140945578a222ec4ea8fc09861e4a29f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -67,11 +70,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig.FRONT|rig.BACKAction
-      takeName: rig.FRONT|rig.BACKAction
+      name: rig.FRONT|rig.FRONTAction (1)
+      takeName: rig.FRONT|rig.FRONTAction
       internalID: 0
-      firstFrame: 0
-      lastFrame: 19
+      firstFrame: 20
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,7 +103,7 @@ ModelImporter:
       takeName: rig.FRONT|rig.FRONTAction
       internalID: 0
       firstFrame: 0
-      lastFrame: 33
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

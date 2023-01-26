@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 456861f1451b8de42b0cf8f7d3f51472
+guid: 2c169d96b5ea9404dbd2abe3b1aeed76
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -12,7 +12,32 @@ ModelImporter:
   - first:
       74: -6567473532706296881
     second: rig.BACK|rigAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 74e765e7c12531640b2082f788ef34bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 9c2c6281d20bef24e893368efeb5eec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: bcc9150c1880c794aad9ac4e86186660, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 56f48f3b18ebff24192e2f3041ad2dba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: fd0b8e1d9b8fbb549a5db1e8c106ff43, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,8 +70,8 @@ ModelImporter:
       name: rig.BACK|rig.BACKAction
       takeName: rig.BACK|rig.BACKAction
       internalID: 0
-      firstFrame: 21
-      lastFrame: 32
+      firstFrame: 0
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -54,7 +79,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
