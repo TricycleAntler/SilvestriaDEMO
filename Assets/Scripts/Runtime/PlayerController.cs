@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float slideOnLand;
 	[SerializeField] private UI_Inventory uiInventory;
 	[SerializeField] private InputActionAsset inputProvider;
-	[SerializeField] private float moveSpeed = 2f;
+	[SerializeField] private float moveSpeed; //= 2f;
 	//[SerializeField] private Animator frontAnim;
 	//2D anim movement properties
 	[SerializeField] private Animator anim;
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 			float playerXPos = transform.position.x;
 			float destinationXPos = dropPosition.x;
 			if(playerXPos == destinationXPos) {
-				Debug.Log("Disabling nav mesh agent");
+				//Debug.Log("Disabling nav mesh agent");
 				PlayerAutoMove = false;
 				agent.isStopped = true;
 				//testing

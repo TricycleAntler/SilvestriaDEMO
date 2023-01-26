@@ -16,9 +16,4 @@ public class StartAnimationAtRandomFrame : MonoBehaviour
         _animator.Play(state.fullPathHash, layer: 0, normalizedTime: Random.Range(0f, 1f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

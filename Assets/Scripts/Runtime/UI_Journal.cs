@@ -31,12 +31,16 @@ public class UI_Journal : MonoBehaviour
         float questSlotCellSize = 70f;
         foreach (QuestGoals quest in QuestManager.Instance.questList)
         {
-            RectTransform questSlotRectTransform = Instantiate(questSlotTemplate, questSlotContainer).GetComponent<RectTransform>();
+            RectTransform questSlotRectTransform;
+            TextMeshProUGUI questDescription;
+            TextMeshProUGUI questName;
+            Image image;
+            questSlotRectTransform = Instantiate(questSlotTemplate, questSlotContainer).GetComponent<RectTransform>();
             questSlotRectTransform.gameObject.SetActive(true);
             questSlotRectTransform.anchoredPosition = new Vector2(0 * questSlotCellSize, y * questSlotCellSize);
-            TextMeshProUGUI questName = questSlotRectTransform.Find("QuestNameText").GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI questDescription = questSlotRectTransform.Find("QuestDescriptionText").GetComponent<TextMeshProUGUI>();
-            Image image = questSlotRectTransform.Find("QuestStatusImg").GetComponent<Image>();
+            questName = questSlotRectTransform.Find("QuestNameText").GetComponent<TextMeshProUGUI>();
+            questDescription = questSlotRectTransform.Find("QuestDescriptionText").GetComponent<TextMeshProUGUI>();
+            image = questSlotRectTransform.Find("QuestStatusImg").GetComponent<Image>();
             image.sprite = quest.GetQuestStateSprite();
             questName.SetText(quest.questName.ToString());
             questDescription.SetText(quest.questDescription.ToString());

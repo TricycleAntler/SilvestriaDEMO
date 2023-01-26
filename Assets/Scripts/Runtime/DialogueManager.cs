@@ -133,7 +133,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void SetSpeakerName(string tagValue) {
-        
         speakerObj.transform.Find("CharacterNamePanel").gameObject.GetComponentInChildren<TextMeshProUGUI>().text = tagValue;
     }
 
@@ -162,10 +161,8 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    speaker.SetActive(false);  
+                    speaker.SetActive(false);
                 }
-                
-                
             }
         }
         else {
@@ -181,9 +178,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     speaker.SetActive(false);
                 }
-                    
             }
-            
+
         }
     }
 

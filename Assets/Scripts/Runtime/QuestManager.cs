@@ -11,7 +11,7 @@ public class QuestManager : MonoBehaviour
 
     private void Awake() {
         if(Instance != null) {
-            Debug.Log("More than One Quest Manager Instance Present");
+            Debug.LogWarning("More than One Quest Manager Instance Present");
             Destroy(this.gameObject);
             return;
         }
@@ -83,7 +83,7 @@ public class QuestManager : MonoBehaviour
             if(questKey != null)
                     dialogueVariables.MarkQuestCompletedBool(questKey);
             else
-                Debug.Log("quest key is null.. something is wrong");
+                Debug.LogWarning("quest key is null.. something is wrong");
         }
     }
 

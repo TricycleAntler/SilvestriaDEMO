@@ -10,22 +10,23 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public static event Action<Vector3> OnSeedDrop;
     private RectTransform rectTransform;
     private Transform itemPosition;
-    private float itemSpawnPosY = 4.29f;
+    private float itemSpawnPosY;
     [SerializeField] private Canvas uiCanvas;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Player player;
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
         itemPosition = GetComponent<Transform>();
+        itemSpawnPosY = 4.29f;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("On Begin Drag");
+        //Debug.Log("On Begin Drag");
         OnUIActionStart?.Invoke(true);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("On Pointer Down");
+        //Debug.Log("On Pointer Down");
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
@@ -35,10 +36,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("On End Drag");
+        //Debug.Log("On End Drag");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit, 10f,layerMask)){
-            Debug.Log("Hit the Ground");
+            //Debug.Log("Hit the Ground");
             Inventory inventory = player.GetPlayerInventory();
             //drop item from inventory
             //create planting tree game object and place it here

@@ -23,7 +23,7 @@ public abstract class QuestGoals : ScriptableObject
    public abstract void IncrementAmount();
    public virtual void QuestFinished() {
         questState = QuestState.Completed;
-        Debug.Log("Quest Completed :" + questID);
+        //Debug.Log("Quest Completed :" + questID);
    }
 
     public virtual Sprite GetQuestStateSprite()

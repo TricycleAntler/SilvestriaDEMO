@@ -10,10 +10,6 @@ public class Inventory
 
     public Inventory() {
         itemList = new List<Item>();
-
-        //AddItem(new Item {itemType = Item.ItemType.Berry, amount = 2});
-        Debug.Log("Inventory");
-
     }
 
     public void AddItem(Item item) {
@@ -34,11 +30,6 @@ public class Inventory
             itemList.Add(item);
         }
         OnInventoryListChanged?.Invoke();
-        //testing
-        foreach(Item itm in itemList){
-            Debug.Log(itm);
-            Debug.Log(itm.amount);
-        }
     }
 
     public void DropItem(Item item) {
@@ -57,7 +48,6 @@ public class Inventory
         else {
             itemList.Remove(item);
         }
-        Debug.Log("item Removed");
         OnInventoryListChanged?.Invoke();
     }
 

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SpriteLookToCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Camera mainCam;
+    private Vector3 rotationVector;
 
+    void Awake() {
+        mainCam = Camera.main;
+        rotationVector = transform.rotation.eulerAngles;
+    }
     // Update is called once per frame
     void Update()
     {
-        Vector3 rotationVector = transform.rotation.eulerAngles;
-        rotationVector.y = Camera.main.transform.rotation.eulerAngles.y;
+        rotationVector.y = mainCam.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Euler(rotationVector);
     }
 }

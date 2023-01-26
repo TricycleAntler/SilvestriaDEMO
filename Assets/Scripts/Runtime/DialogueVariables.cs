@@ -17,7 +17,7 @@ public class DialogueVariables
         foreach(string name in gloablVarsStory.variablesState) {
             Ink.Runtime.Object value = gloablVarsStory.variablesState.GetVariableWithName(name);
             dialogueVars.Add(name,value);
-            Debug.Log("Initializing global dialogue variables :" + name + " = " +value);
+            //Debug.Log("Initializing global dialogue variables :" + name + " = " +value);
         }
     }
 
@@ -111,7 +111,7 @@ public class DialogueVariables
     private void GetVariablesToStory(Story story) {
         foreach(KeyValuePair<string, Ink.Runtime.Object> variable in dialogueVars) {
             story.variablesState.SetGlobal(variable.Key,variable.Value);
-            Debug.Log("Dictionary Key : "+variable.Key + " Dictionary Value : " +variable.Value);
+            //Debug.Log("Dictionary Key : "+variable.Key + " Dictionary Value : " +variable.Value);
         }
     }
 }
