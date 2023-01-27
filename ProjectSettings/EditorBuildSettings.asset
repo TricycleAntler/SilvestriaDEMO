@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Ellis.unity
-    guid: a53f94525bf9193469c0449ba5013302
+    path: Assets/Scenes/IntroScene.unity
+    guid: bc7a1ffa864c31c42ae902d1d494db44
+  - enabled: 1
+    path: Assets/Scenes/BUILD_SCENE.unity
+    guid: dd2d2d292b80ad44cbb6f733dfd59d25
+  - enabled: 1
+    path: Assets/Scenes/OuttroScene.unity
+    guid: 8bd7693a6bd7918469a373ae86162c31
   m_configObjects: {}
