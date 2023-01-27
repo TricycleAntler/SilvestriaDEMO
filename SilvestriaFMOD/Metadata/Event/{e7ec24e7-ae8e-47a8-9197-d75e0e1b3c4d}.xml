@@ -58,7 +58,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{7d714e0b-32bf-4355-8df4-3648ce180914}">
 		<property name="minimumDistance">
-			<value>5</value>
+			<value>3</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{c86df450-dd4c-4b1c-a81a-87f132b539e6}" />
@@ -120,6 +123,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{10698214-3ac6-472c-8516-0d86928368d9}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -172,16 +178,16 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>11</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="MultiSound" id="{e376259a-2a74-4a53-a7d1-40692e360f25}">
 		<relationship name="sounds">
-			<destination>{70afb3af-516a-428e-a52e-deb75d33716f}</destination>
-			<destination>{7ee8effb-09ea-47ea-be63-a1405be9d3c6}</destination>
-			<destination>{6a72b39a-42f5-412b-b851-fc798feb34a1}</destination>
-			<destination>{11a5dc6f-dfa4-44ef-bddf-fa51df0adbbd}</destination>
-			<destination>{f7db698d-283d-444f-bb8c-1b08302b82cc}</destination>
+			<destination>{61625c40-6132-4dde-9244-e55de19730f7}</destination>
+			<destination>{d007eba6-4fc3-4572-b105-1df7fdf73e82}</destination>
+			<destination>{1a0909ce-3aac-40d8-8710-c40071dbf61e}</destination>
+			<destination>{7496e2dc-be44-4fc7-aa78-bd297469a7bd}</destination>
+			<destination>{0c631129-81ee-4a0b-adb2-6f5376f93272}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{5e272d56-1d0e-4370-aa56-4290485f7643}">
@@ -194,38 +200,37 @@
 	<object class="MixerBusFader" id="{4deca018-a3dc-44a0-8d80-2d588382d1d4}" />
 	<object class="SpatialiserEffect" id="{a16dac76-3ed5-4715-84db-7cc2ef1d76ad}">
 		<property name="minimumDistance">
-			<value>5</value>
+			<value>3</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{70afb3af-516a-428e-a52e-deb75d33716f}">
+	<object class="SingleSound" id="{61625c40-6132-4dde-9244-e55de19730f7}">
 		<relationship name="audioFile">
-			<destination>{b18f3348-41d4-46bf-b420-f974a53d9eb8}</destination>
+			<destination>{1735737e-9add-41bd-bef8-4f90840c7f64}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{7ee8effb-09ea-47ea-be63-a1405be9d3c6}">
+	<object class="SingleSound" id="{d007eba6-4fc3-4572-b105-1df7fdf73e82}">
 		<relationship name="audioFile">
-			<destination>{82f7adcb-0d1e-4c1f-acb6-0155a4daa2ba}</destination>
+			<destination>{d29ff978-1b8a-4a41-85b6-6bf8f07c4b04}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{6a72b39a-42f5-412b-b851-fc798feb34a1}">
+	<object class="SingleSound" id="{1a0909ce-3aac-40d8-8710-c40071dbf61e}">
 		<relationship name="audioFile">
-			<destination>{d5588b14-a616-4233-961c-e7ee70b72def}</destination>
+			<destination>{23c23714-8b16-40a7-a0fa-8befac545741}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{11a5dc6f-dfa4-44ef-bddf-fa51df0adbbd}">
+	<object class="SingleSound" id="{7496e2dc-be44-4fc7-aa78-bd297469a7bd}">
 		<relationship name="audioFile">
-			<destination>{2c2ed456-097c-42b0-b450-94a99e4c8f81}</destination>
+			<destination>{8793b6a7-5fe1-4c16-9d2b-f193709c55ca}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{f7db698d-283d-444f-bb8c-1b08302b82cc}">
+	<object class="SingleSound" id="{0c631129-81ee-4a0b-adb2-6f5376f93272}">
 		<relationship name="audioFile">
-			<destination>{5d1ebd8d-2592-496d-8711-57cecc843e94}</destination>
+			<destination>{9de72db5-ed92-42b3-9880-acd56ff5e48d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{40f90d47-6894-4fa4-8cdc-b7e81a551d6e}" />
-	<object class="ThreeEQEffect" id="{d23209d7-1276-48e7-8511-7d654370f903}">
-		<property name="lowGain">
-			<value>-3.5</value>
-		</property>
-	</object>
+	<object class="ThreeEQEffect" id="{d23209d7-1276-48e7-8511-7d654370f903}" />
 </objects>
