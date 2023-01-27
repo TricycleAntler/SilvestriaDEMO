@@ -9,6 +9,10 @@ public class QuestManager : MonoBehaviour
     public DialogueVariables dialogueVariables;
     public static QuestManager Instance;
 
+    //FOR A QUICK FIX FOR PRE ALPHA BUILD
+    [SerializeField] private LevelLoader loader;
+
+
     private void Awake() {
         if(Instance != null) {
             Debug.LogWarning("More than One Quest Manager Instance Present");
@@ -17,6 +21,17 @@ public class QuestManager : MonoBehaviour
         }
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
         Instance = this;
+    }
+
+    //QUICK FIX FOR PRE ALPHA BUILD
+    private void OnEnable()
+    {
+        dialogueVariables.OnQuestFinished += JumpToOuttro;
+    }
+
+    private void OnDisable()
+    {
+        dialogueVariables.OnQuestFinished -= JumpToOuttro;
     }
 
     private void StartQuest() {
@@ -87,7 +102,13 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-   public void AddQuestsToQuestList(QuestGoals goals) {
+    //QUICK FIX FOR PRE ALPHA BUILD
+    public void JumpToOuttro()
+    {
+        loader.LoadOuttro();
+    }
+
+    public void AddQuestsToQuestList(QuestGoals goals) {
         questList.Add(goals);
         StartQuest();
    }
