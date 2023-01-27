@@ -6,6 +6,8 @@ public class QuestManager : MonoBehaviour
 {
     [SerializeField] private TextAsset loadGlobalsJSON;
     [SerializeField] public List<QuestGoals> questList;
+    //FOR A QUICK FIX FOR PRE ALPHA BUILD
+    [SerializeField] private LevelLoader loader;
     public DialogueVariables dialogueVariables;
     public static QuestManager Instance;
 
@@ -19,6 +21,18 @@ public class QuestManager : MonoBehaviour
         Instance = this;
     }
 
+
+    //QUICK FIX FOR PRE ALPHA BUILD
+    private void OnEnable()
+    {
+        dialogueVariables.OnQuestFinished += JumpToOuttro;
+    }
+
+    private void OnDisable()
+    {
+        dialogueVariables.OnQuestFinished -= JumpToOuttro;
+    }
+    //
     private void StartQuest() {
         foreach(QuestGoals questGoal in questList) {
             if(questGoal.questState == QuestGoals.QuestState.Untouched) {
@@ -26,7 +40,7 @@ public class QuestManager : MonoBehaviour
             }
         }
     }
-
+    
     private bool CheckOverallQuestStatus(string questGroup) {
         bool allCompleted = true;
         foreach(QuestGoals quest in questList) {
@@ -91,4 +105,10 @@ public class QuestManager : MonoBehaviour
         questList.Add(goals);
         StartQuest();
    }
+
+    //QUICK FIX FOR PRE ALPHA BUILD
+    public void JumpToOuttro()
+    {
+        loader.LoadOuttro();
+    }
 }

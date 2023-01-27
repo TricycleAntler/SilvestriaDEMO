@@ -6,6 +6,7 @@ public class ItemTemplate : MonoBehaviour
 {
     private Item item;
     private SpriteRenderer spriteRenderer;
+    private static float raycastDistance = 20f;
 
     void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -13,7 +14,7 @@ public class ItemTemplate : MonoBehaviour
 
     public static Vector3 CalculateSpawnPosition() {
         float x = Random.Range(427f,440f);
-        float y = 4.5f;
+        float y = 15f;
         float z = Random.Range(568f,583f);
 
         Vector3 spawnPosition = new Vector3(x,y,z);
@@ -21,10 +22,21 @@ public class ItemTemplate : MonoBehaviour
     }
 
     public static void SpawnItem(Vector3 position, Item item) {
-        Transform transform = Instantiate(ItemAssets.Instance.itemTemplatePrefab,position, Quaternion.identity);
-        ItemTemplate itemTemplate = transform.GetComponent<ItemTemplate>();
-        itemTemplate.SetItemType(item);
-        itemTemplate.SetItem(item);
+        //send a raycast hit to get the Y value of the spawn position
+        RaycastHit hit;
+        if(Physics.Raycast(position, Vector3.down, out hit, raycastDistance))
+        {
+            if(hit.collider.gameObject.tag == "Ground")
+            {
+                //new position to fix the y value of the object
+                Vector3 newSpawnPosition = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
+                Transform transform = Instantiate(ItemAssets.Instance.itemTemplatePrefab,newSpawnPosition, Quaternion.identity);
+                ItemTemplate itemTemplate = transform.GetComponent<ItemTemplate>();
+                itemTemplate.SetItemType(item);
+                itemTemplate.SetItem(item);
+            }
+        }
+        
         //return itemTemplate;
     }
 
