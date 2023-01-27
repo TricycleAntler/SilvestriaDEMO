@@ -3949,8 +3949,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 5
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 3
+  OverrideMaxDistance: 10
 --- !u!1 &1868721394580779464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7272,7 +7272,7 @@ Transform:
   m_GameObject: {fileID: 3990512720500480758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8327305, y: 1.247559, z: 3.1462677}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1368140115219596085}
@@ -14833,8 +14833,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8815617571648814796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 3.49, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 2}
+  m_LocalPosition: {x: 1.03, y: 3.49, z: 0.03}
+  m_LocalScale: {x: 0.109698, y: 0.109698, z: 0.073132}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1368140115219596085}
@@ -14881,7 +14881,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f95f697d66d238446b1ab717def09945, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b67d8bca58e10245a0d17e691fdac59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
