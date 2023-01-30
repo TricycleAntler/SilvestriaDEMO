@@ -8,7 +8,10 @@ public class DialogueVariables
     private Dictionary<string, Ink.Runtime.Object> dialogueVars;
     private Story gloablVarsStory;
 
-     public event Action<string> OnQuestStarted;
+    //QUICK FIX FOR THE PRE ALPHA BUILD
+    public event Action OnQuestFinished;
+
+    public event Action<string> OnQuestStarted;
     public DialogueVariables(TextAsset loadGlobalsJSON) {
         //create an ink story for the global vars asset file provided.
          gloablVarsStory = new Story(loadGlobalsJSON.text);
@@ -84,6 +87,17 @@ public class DialogueVariables
             dialogueVars.Remove(name);
             dialogueVars.Add(name, val);
             CheckQuestStartedState(name);
+        }
+
+        //Quick fix to go the next Scene 
+        if (name == "elliot")
+        {
+            int elliotVal = ((Ink.Runtime.IntValue)this.GetVariableState(name)).value;
+            if (elliotVal == 2)
+            {
+                //go to next scene
+                OnQuestFinished?.Invoke();
+            }
         }
     }
 
