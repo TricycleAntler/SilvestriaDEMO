@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     private Story story;
     private TextMeshProUGUI nametag;
     private TextMeshProUGUI textBody;
-    private List<string> tags; // = new List<string>();
+    private List<string> tags; 
     private bool dialogueIsPlaying;
     private bool isTyping; // = false;
     private string playerCurrentlySpeakingTo;
@@ -47,7 +47,6 @@ public class DialogueManager : MonoBehaviour
         inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
         tags = new List<string>();
         isTyping = false;
-        //characterUIs = new List<CharacterUiBehaviour>();
 
     }
 
