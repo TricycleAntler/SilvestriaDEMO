@@ -7,7 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     //This is just a temporary script to load scenes in game
 
-   [SerializeField] private float transitionTime = 2f;
+    [SerializeField] private float transitionTime = 2f;
     public Animator transition;
 
     public void LoadPlayScene()

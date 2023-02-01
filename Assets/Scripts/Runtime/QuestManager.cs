@@ -11,10 +11,6 @@ public class QuestManager : MonoBehaviour
     public DialogueVariables dialogueVariables;
     public static QuestManager Instance;
 
-    //FOR A QUICK FIX FOR PRE ALPHA BUILD
-    [SerializeField] private LevelLoader loader;
-
-
     private void Awake() {
         if(Instance != null) {
             Debug.LogWarning("More than One Quest Manager Instance Present");
