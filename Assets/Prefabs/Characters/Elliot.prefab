@@ -3867,7 +3867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1368140115219596085}
   - component: {fileID: 1546464559207395173}
-  - component: {fileID: 2862190544267340814}
   m_Layer: 0
   m_Name: Elliot
   m_TagString: Untagged
@@ -3921,36 +3920,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2862190544267340814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853033898151254415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -403954457
-      Data2: 1202237070
-      Data3: 1591187345
-      Data4: 1295784718
-    Path: event:/NPC/Elliot
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 3
-  OverrideMaxDistance: 10
 --- !u!1 &1868721394580779464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7272,7 +7241,7 @@ Transform:
   m_GameObject: {fileID: 3990512720500480758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8327305, y: 1.247559, z: 3.1462677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1368140115219596085}
@@ -7306,7 +7275,6 @@ MonoBehaviour:
   visualCue: {fileID: 8815617571648814796}
   inputProvider: {fileID: -944628639613478452, guid: 7534235d1bb352b47bd996e960098106, type: 3}
   inkStory: {fileID: 4900000, guid: 322d84314f6012548b67023a8e15f14b, type: 3}
-  characterName: 
 --- !u!1 &3999103559105147014
 GameObject:
   m_ObjectHideFlags: 0
@@ -14817,7 +14785,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9115821975820774357}
   - component: {fileID: 5801480979935720244}
-  - component: {fileID: 55687020321873659}
   m_Layer: 0
   m_Name: VisualCue
   m_TagString: Untagged
@@ -14833,8 +14800,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8815617571648814796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.03, y: 3.49, z: 0.03}
-  m_LocalScale: {x: 0.109698, y: 0.109698, z: 0.073132}
+  m_LocalPosition: {x: 0.59, y: 3.49, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1368140115219596085}
@@ -14881,7 +14848,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2b67d8bca58e10245a0d17e691fdac59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f95f697d66d238446b1ab717def09945, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14892,36 +14859,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &55687020321873659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8815617571648814796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 608064272
-      Data2: 1287506897
-      Data3: 1567469738
-      Data4: 108091686
-    Path: event:/UI/UI_QuestPopup
-  Event: 
-  PlayEvent: 11
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &8860003492482880452
 GameObject:
   m_ObjectHideFlags: 0
