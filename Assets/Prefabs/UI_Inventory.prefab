@@ -149,7 +149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23965845, y: 0.279}
   m_AnchorMax: {x: 0.8027372, y: 0.78323567}
-  m_AnchoredPosition: {x: -1.7354584, y: -1.7341995}
+  m_AnchoredPosition: {x: -1.7354431, y: -1.7341995}
   m_SizeDelta: {x: -1.440094, y: 6.7492065}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7551679579857640213
@@ -244,6 +244,8 @@ GameObject:
   - component: {fileID: 7551679580218953484}
   - component: {fileID: 7551679580218953482}
   - component: {fileID: 7551679580218953483}
+  - component: {fileID: 1852490637334172212}
+  - component: {fileID: 2205246552415661193}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -299,7 +301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cce9800c50063c5479762dc3d8b4c815, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a210023306ecdf439d06a9abb906f73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -309,6 +311,66 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1852490637334172212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551679580218953485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1158134479
+      Data2: 1298749627
+      Data3: 1931713930
+      Data4: -1219348814
+    Path: event:/UI/UI_SeedBag_open
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2205246552415661193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551679580218953485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1853422849
+      Data2: 1168313509
+      Data3: 1386998169
+      Data4: -761453395
+    Path: event:/UI/UI_SeedBag_close
+  Event: 
+  PlayEvent: 12
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7551679580808243843
 GameObject:
   m_ObjectHideFlags: 0

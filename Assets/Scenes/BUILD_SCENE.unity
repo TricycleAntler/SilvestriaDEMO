@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.7
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 25f2f94deb027fd41bab0ae93d2e8c89, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6d190116dfe6be84ea2cf85764c462ee, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -21177,7 +21177,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1852490637334172212, guid: 3f47f53e46516fa40af844b68ec907c8, type: 3}
+    - {fileID: 2205246552415661193, guid: 3f47f53e46516fa40af844b68ec907c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f47f53e46516fa40af844b68ec907c8, type: 3}
 --- !u!224 &658242208 stripped
 RectTransform:
@@ -25103,11 +25105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7063446
+      value: 0.70634454
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.032823443
+      value: 0.032823455
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
@@ -25115,7 +25117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.032823436
+      value: -0.032823455
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719215348841, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25163,7 +25165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14143915
+      value: -0.14143914
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
@@ -40698,6 +40700,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 1283146774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1287014966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7551679580218953485, guid: 3f47f53e46516fa40af844b68ec907c8, type: 3}
+  m_PrefabInstance: {fileID: 658242207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1287014970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287014966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1853422849
+      Data2: 1168313509
+      Data3: 1386998169
+      Data4: -761453395
+    Path: event:/UI/UI_SeedBag_close
+  Event: 
+  PlayEvent: 12
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1287014971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287014966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1158134479
+      Data2: 1298749627
+      Data3: 1931713930
+      Data4: -1219348814
+    Path: event:/UI/UI_SeedBag_open
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1289464064
 PrefabInstance:
   m_ObjectHideFlags: 0
