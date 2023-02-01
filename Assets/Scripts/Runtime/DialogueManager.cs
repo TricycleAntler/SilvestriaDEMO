@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private List<GameObject> speakers;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private List<CharacterUiBehaviour> characterUIs;
     [Header("Global Vars Ink File")]
     private GameObject speakerObj;
     private float textSpeed;
@@ -32,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     private const string SPEED = "speed";
 
     public static DialogueManager Instance;
-    public List<CharacterUiBehaviour> characterUIs; // = new List<CharacterUiBehaviour>();
+    //public List<CharacterUiBehaviour> characterUIs; // = new List<CharacterUiBehaviour>();
     public static event Action<string> OnDialogueExit;
 
     private void Awake() {
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour
         inputProvider.FindActionMap("UIActions").FindAction("Skip Dialogue").performed += UpdateDialogueSystem;
         tags = new List<string>();
         isTyping = false;
-        characterUIs = new List<CharacterUiBehaviour>();
+        //characterUIs = new List<CharacterUiBehaviour>();
 
     }
 
@@ -141,8 +142,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void SetPortrait(string tagValue) {
-        foreach(CharacterUiBehaviour characterUI in characterUIs) {
-            if(characterUI.tagName == tagValue){
+        foreach (CharacterUiBehaviour characterUI in characterUIs)
+        {
+            if (characterUI.tagName == tagValue)
+            {
                 speakerObj.gameObject.GetComponentInChildren<Image>().sprite = characterUI.characterSprite;
                 return;
             }
