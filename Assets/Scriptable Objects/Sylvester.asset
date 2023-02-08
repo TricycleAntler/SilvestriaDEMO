@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3da7817545557642ae7a4b1fb3418eb, type: 3}
   m_Name: Sylvester
   m_EditorClassIdentifier: 
-  tagName: Sylvester
+  tagName: Silvester
   layout: Left
   characterSprite: {fileID: 21300000, guid: bb7c572a82eb7fd439c1f807cc8f7d1b, type: 3}
   animClip: {fileID: 7400000, guid: de419fe6b3ffc9341b98df5f5ab707b9, type: 2}
