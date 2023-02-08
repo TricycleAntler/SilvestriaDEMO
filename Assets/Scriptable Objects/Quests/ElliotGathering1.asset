@@ -20,3 +20,6 @@ MonoBehaviour:
   questType: 1
   questState: 1
   amountToCollect: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8

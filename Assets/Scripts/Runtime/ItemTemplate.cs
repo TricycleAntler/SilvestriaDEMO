@@ -6,16 +6,14 @@ public class ItemTemplate : MonoBehaviour
 {
     private Item item;
     private SpriteRenderer spriteRenderer;
-
     void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public static Vector3 CalculateSpawnPosition() {
         float x = Random.Range(427f,440f);
-        float y = 4.5f;
+        float y = 12f;
         float z = Random.Range(568f,583f);
-
         Vector3 spawnPosition = new Vector3(x,y,z);
         return spawnPosition;
     }
