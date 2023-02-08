@@ -7,6 +7,7 @@ public class GatheringQuests : QuestGoals
 {
     [SerializeField] private int amountToCollect;
     private int currentCollectedAmount;
+    public LayerMask groundLayer;
     public override void StartQuest()
     {
         //Debug.Log("Quest Starting Gathering Quest");
@@ -15,8 +16,12 @@ public class GatheringQuests : QuestGoals
         currentCollectedAmount = 0;
         for(int i = 0; i< amountToCollect; i++) {
             Vector3 spawnPosition = ItemTemplate.CalculateSpawnPosition();
-            ItemTemplate.SpawnItem(spawnPosition, new Item{itemID = this.itemID, amount = 1});
-            //Debug.Log("Item Spawned");
+            RaycastHit hit;
+            if(Physics.Raycast(spawnPosition, Vector3.down,out hit,Mathf.Infinity,groundLayer)) {
+                float yPosition = hit.point.y + 0.5f;
+                spawnPosition.y = yPosition;
+                ItemTemplate.SpawnItem(spawnPosition, new Item{itemID = this.itemID, amount = 1});
+            }
         }
         questState = QuestState.Started;
         //throw new System.NotImplementedException();
