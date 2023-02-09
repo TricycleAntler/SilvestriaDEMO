@@ -278,9 +278,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{052300df-76d3-49a3-ac2c-2405fd43ba67}">
-		<property name="volume">
-			<value>-6.5</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{e0363e43-6d43-4f5a-8208-ec547745c353}</destination>
 		</relationship>
@@ -637,6 +634,12 @@
 		</relationship>
 	</object>
 	<object class="EventSound" id="{37926eaa-acc9-4012-90db-c8db3cd3345e}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>50</value>
+		</property>
 		<property name="length">
 			<value>300</value>
 		</property>
@@ -1467,7 +1470,7 @@
 	</object>
 	<object class="AutomationPoint" id="{bec05f76-91e6-4d9e-bb59-774556de5323}">
 		<property name="position">
-			<value>3</value>
+			<value>26</value>
 		</property>
 		<property name="value">
 			<value>1</value>
