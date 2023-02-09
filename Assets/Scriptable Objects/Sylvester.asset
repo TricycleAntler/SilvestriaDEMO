@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagName: Silvester
   layout: Left
-  characterSprite: {fileID: 21300000, guid: bb7c572a82eb7fd439c1f807cc8f7d1b, type: 3}
+  characterSprite: {fileID: 21300000, guid: ff2261d26ebfdba45ae3b745010c61a7, type: 3}
   animClip: {fileID: 7400000, guid: de419fe6b3ffc9341b98df5f5ab707b9, type: 2}

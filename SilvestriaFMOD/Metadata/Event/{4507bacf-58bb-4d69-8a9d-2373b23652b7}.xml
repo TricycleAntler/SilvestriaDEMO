@@ -104,7 +104,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{02f2d81f-1b2b-4957-a77f-401cc680c0bd}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-11.5</value>
 		</property>
 		<property name="name">
 			<value>SeedBag Open</value>
@@ -122,6 +122,7 @@
 	<object class="MixerBusEffectChain" id="{f9506225-fd28-46ed-a167-41f6550d8c24}">
 		<relationship name="effects">
 			<destination>{a56e4e3c-45e7-424f-a391-34fbd013ee3f}</destination>
+			<destination>{28b25062-aa68-430a-832f-96ee449cc098}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2d9dd9e7-26c4-4e80-9cbf-22b0f3549d1b}" />
@@ -154,6 +155,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{9aacd017-746d-465e-8de4-892464dd3c90}" />
 	<object class="MixerBusFader" id="{a56e4e3c-45e7-424f-a391-34fbd013ee3f}" />
+	<object class="ThreeEQEffect" id="{28b25062-aa68-430a-832f-96ee449cc098}">
+		<property name="lowGain">
+			<value>-8</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d6bc0a33-d667-4297-8bc5-fae73ab08215}" />
 	<object class="ThreeEQEffect" id="{9b88e084-d548-4037-bb1e-5533c7c8733d}">
 		<property name="lowGain">

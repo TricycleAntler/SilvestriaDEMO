@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{3a1d6148-f279-4159-ad8d-c03a4ebe84a5}">
 		<property name="assetPath">
-			<value>WAT_Stream_Ripples_Soft_01.wav</value>
+			<value>Ambiance/WAT_Stream_Ripples_Soft_01.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

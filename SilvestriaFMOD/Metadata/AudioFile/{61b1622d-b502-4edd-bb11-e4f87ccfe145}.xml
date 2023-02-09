@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{61b1622d-b502-4edd-bb11-e4f87ccfe145}">
+		<property name="assetPath">
+			<value>Music/Spring by Frank Schroeter.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>130.13585034013605</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e047f6fd-9ef0-41e4-8ae7-06d70d02201a}</destination>
+		</relationship>
+	</object>
+</objects>

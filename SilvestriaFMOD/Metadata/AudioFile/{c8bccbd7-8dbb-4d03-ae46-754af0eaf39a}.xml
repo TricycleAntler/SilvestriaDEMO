@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c8bccbd7-8dbb-4d03-ae46-754af0eaf39a}">
 		<property name="assetPath">
-			<value>AMB_Embers_loop.ogg</value>
+			<value>Ambiance/AMB_Embers_loop.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

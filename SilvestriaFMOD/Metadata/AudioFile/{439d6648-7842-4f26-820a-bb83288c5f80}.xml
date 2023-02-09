@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{439d6648-7842-4f26-820a-bb83288c5f80}">
 		<property name="assetPath">
-			<value>AMB_Thunder_SAMPLE_TEST-001.ogg</value>
+			<value>Ambiance/AMB_Thunder_SAMPLE_TEST-001.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

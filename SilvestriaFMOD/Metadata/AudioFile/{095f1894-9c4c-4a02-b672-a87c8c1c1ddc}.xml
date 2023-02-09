@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{095f1894-9c4c-4a02-b672-a87c8c1c1ddc}">
 		<property name="assetPath">
-			<value>BIRD_SongThrush_New-015.ogg</value>
+			<value>Birds/BIRD_SongThrush_New-015.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

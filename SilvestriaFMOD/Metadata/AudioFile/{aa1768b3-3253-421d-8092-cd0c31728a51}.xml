@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{aa1768b3-3253-421d-8092-cd0c31728a51}">
 		<property name="assetPath">
-			<value>SFX_Squirrel_movement-008.ogg</value>
+			<value>Player/SFX_Squirrel_movement-008.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

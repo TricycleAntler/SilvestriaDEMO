@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using System;
+using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
-
 	private Rigidbody rb;
 	private NavMeshAgent agent;
 	[SerializeField] private float jumpForce;

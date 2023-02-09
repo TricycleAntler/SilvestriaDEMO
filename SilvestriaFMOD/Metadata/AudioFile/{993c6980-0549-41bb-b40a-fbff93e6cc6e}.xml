@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{993c6980-0549-41bb-b40a-fbff93e6cc6e}">
 		<property name="assetPath">
-			<value>BIRD_SongThrush_New-010.ogg</value>
+			<value>Birds/BIRD_SongThrush_New-010.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

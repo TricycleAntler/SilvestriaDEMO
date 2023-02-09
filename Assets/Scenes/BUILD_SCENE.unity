@@ -258,8 +258,8 @@ MonoBehaviour:
       Data4: 2113534165
     Path: event:/Ambiance/AMB_River
   Event: 
-  PlayEvent: 1
-  StopEvent: 0
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -267,8 +267,8 @@ MonoBehaviour:
   - Name: RiverSize
     Value: 1
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 5
+  OverrideMaxDistance: 25
 --- !u!1001 &14111741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5525,7 +5525,6 @@ Transform:
   - {fileID: 1230568026}
   - {fileID: 906119109}
   - {fileID: 12783607}
-  - {fileID: 1733632428}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10305,6 +10304,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7907590927387358229, guid: 2c528091ee782344f84bc4794999176b, type: 3}
   m_PrefabInstance: {fileID: 1225456744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &315263155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315263153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 311336314
+      Data2: 1269211230
+      Data3: -595311950
+      Data4: -1863853156
+    Path: event:/UI/UI_Dialogue_Popup
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &316256035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25109,7 +25138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523717767199723, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Height
-      value: 6.846692
+      value: -9.42
       objectReference: {fileID: 0}
     - target: {fileID: 4671523717767199723, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_Orbits.Array.data[1].m_Radius
@@ -25129,15 +25158,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016993396
+      value: -0.016993403
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7069026
+      value: 0.70690256
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.016993402
+      value: 0.016993403
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719215348841, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25189,7 +25218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70105624
+      value: 0.7010562
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -25197,7 +25226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7010561
+      value: 0.7010562
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
@@ -26757,14 +26786,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858730992}
-  m_LocalRotation: {x: 0.013745019, y: 0.7069732, z: 0.013745019, w: 0.7069732}
-  m_LocalPosition: {x: -1.273, y: 2.96, z: 3.562}
+  m_LocalRotation: {x: 0.014009146, y: 0.7205589, z: 0.013475706, w: 0.6931212}
+  m_LocalPosition: {x: -1.2730103, y: 2.96, z: 3.5620117}
   m_LocalScale: {x: 0.053217757, y: 0.05321777, z: 0.053217757}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1442886936}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 2.228}
+  m_LocalEulerAnglesHint: {x: 0, y: 92.224, z: 2.228}
 --- !u!114 &858730996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27527,6 +27556,10 @@ PrefabInstance:
     - target: {fileID: 7226196134457183874, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815617571648814796, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7ca1e4da60727f478911a26efa43f21, type: 3}
@@ -28744,8 +28777,8 @@ MonoBehaviour:
       Data4: 2113534165
     Path: event:/Ambiance/AMB_River
   Event: 
-  PlayEvent: 1
-  StopEvent: 0
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -28753,8 +28786,8 @@ MonoBehaviour:
   - Name: RiverSize
     Value: 0
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 5
+  OverrideMaxDistance: 25
 --- !u!1001 &907023242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29874,8 +29907,8 @@ MonoBehaviour:
       Data4: 993566301
     Path: event:/Music/MusicManager
   Event: 
-  PlayEvent: 1
-  StopEvent: 0
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -31065,7 +31098,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.024032265, y: 0.00000014901161, z: 0.000000010244548, w: 0.9997113}
+  m_LocalRotation: {x: -0.024032291, y: 0.000000029802322, z: -0.0000000027939677, w: 0.9997113}
   m_LocalPosition: {x: -97.98791, y: 6.1996794, z: 404.14566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39016,6 +39049,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5512026212689261309, guid: 2c528091ee782344f84bc4794999176b, type: 3}
   m_PrefabInstance: {fileID: 1225456744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1225456751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225456749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 311336314
+      Data2: 1269211230
+      Data3: -595311950
+      Data4: -1863853156
+    Path: event:/UI/UI_Dialogue_Popup
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1225596599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39218,8 +39281,8 @@ MonoBehaviour:
       Data4: 2113534165
     Path: event:/Ambiance/AMB_River
   Event: 
-  PlayEvent: 1
-  StopEvent: 0
+  PlayEvent: 11
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -39227,8 +39290,8 @@ MonoBehaviour:
   - Name: RiverSize
     Value: 0
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 5
+  OverrideMaxDistance: 25
 --- !u!4 &1230568026
 Transform:
   m_ObjectHideFlags: 0
@@ -42818,6 +42881,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1468042565}
     m_Modifications:
+    - target: {fileID: 2670427645894291639, guid: 4e8abf4b57033714b849cfd05d924bbe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6559271364449888061, guid: 4e8abf4b57033714b849cfd05d924bbe, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -48434,6 +48501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1468042565}
     m_Modifications:
+    - target: {fileID: 2670427645894291639, guid: 4e8abf4b57033714b849cfd05d924bbe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2670427645894291639, guid: 4e8abf4b57033714b849cfd05d924bbe, type: 3}
       propertyPath: m_Bounds.m_Center.z
       value: 0.00012207031
@@ -61302,68 +61373,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 1731433238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1733632426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1733632428}
-  - component: {fileID: 1733632427}
-  m_Layer: 0
-  m_Name: AudioEmbers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1733632427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733632426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -912594910
-      Data2: 1150805418
-      Data3: 648297637
-      Data4: -472697162
-    Path: event:/Ambiance/BurntForest
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &1733632428
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733632426}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.047638, y: -3.2499995, z: 0.7199707}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 145799877}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1735989602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66712,7 +66721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.87375
+      value: 2.1370118
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalScale.z
@@ -66720,7 +66729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.53900146
+      value: 1.4229
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -68987,6 +68996,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9081637592446731773, guid: 21c350611a1cab34a96ef15bfd326aba, type: 3}
   m_PrefabInstance: {fileID: 1965696530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1971047892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1662025360948164589, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
+  m_PrefabInstance: {fileID: 1662025361802921772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1971047896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971047892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1405815554
+      Data2: 1206523475
+      Data3: -234714197
+      Data4: 189527602
+    Path: event:/UI/UI_Journal_Close
+  Event: 
+  PlayEvent: 12
+  StopEvent: 11
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1971047897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971047892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2058026509
+      Data2: 1156628002
+      Data3: 1952233912
+      Data4: 2037398942
+    Path: event:/UI/UI_Journal_Open
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1976625244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73476,9 +73550,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.040901184
       objectReference: {fileID: 0}
+    - target: {fileID: 1662025360948164590, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1777344
+      objectReference: {fileID: 0}
     - target: {fileID: 1662025361080589213, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.49999237
+      value: -7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662025361531578311, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662025361907584505, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1662025361907584506, guid: 258243020ed2f714cbd7fef20e023db5, type: 3}
       propertyPath: m_AnchoredPosition.x

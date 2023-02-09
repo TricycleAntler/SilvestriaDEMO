@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{62d9368a-a822-487d-ae03-51e784e92721}">
 		<property name="assetPath">
-			<value>AMB_Wind_gust.ogg</value>
+			<value>Ambiance/AMB_Wind_gust.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
