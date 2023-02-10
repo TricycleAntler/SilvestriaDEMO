@@ -67,6 +67,8 @@ public class DialogueTrigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             playerInRange = true;
+            //Visual cue sfx
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.questPopup, this.transform.position);
         }
     }
 

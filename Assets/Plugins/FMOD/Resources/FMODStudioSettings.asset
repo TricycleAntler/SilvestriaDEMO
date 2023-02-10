@@ -282,7 +282,7 @@ MonoBehaviour:
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
-  TargetBankFolder: C:\Users\SPS\Documents\GitHub\SilvestriaDEMO_2\FMODbanks
+  TargetBankFolder: 
   EventLinkage: 0
   LoggingLevel: 2
   SpeakerModeSettings: []

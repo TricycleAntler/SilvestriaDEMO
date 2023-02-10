@@ -107,6 +107,9 @@
 		<relationship name="fadeInCurve">
 			<destination>{0ca96ba6-a78c-4610-bc78-7956d9f684b8}</destination>
 		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{9739bf3a-1ac6-49d9-9a57-1c6094668614}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{e3a18992-856b-44c7-95f8-0e4163185ddf}</destination>
 			<destination>{4159780d-58c2-4eb2-a5a8-05fd8aa3a32f}</destination>
@@ -132,7 +135,7 @@
 			<value>1.1000000000000001</value>
 		</property>
 		<property name="length">
-			<value>14.899999999999999</value>
+			<value>12.500000000000002</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{e6d5a76f-1c6f-4689-84cc-c06d025df9d8}</destination>
@@ -154,6 +157,14 @@
 		</relationship>
 		<relationship name="endPoint">
 			<destination>{bac2a8c5-7d8b-4ac0-be23-f10caf0345a1}</destination>
+		</relationship>
+	</object>
+	<object class="FadeCurve" id="{9739bf3a-1ac6-49d9-9a57-1c6094668614}">
+		<relationship name="startPoint">
+			<destination>{484ed564-92d0-4ab1-a98d-6937ffb41083}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{384bfa87-83ab-4332-8aea-e958a6cb3f2b}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{e3a18992-856b-44c7-95f8-0e4163185ddf}">
@@ -196,6 +207,25 @@
 		</property>
 		<property name="value">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{484ed564-92d0-4ab1-a98d-6937ffb41083}">
+		<property name="position">
+			<value>13.700000000000001</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.0357733667</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{384bfa87-83ab-4332-8aea-e958a6cb3f2b}">
+		<property name="position">
+			<value>16</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{a693072f-b8b5-4866-88bb-ebe20b0f80ff}" />

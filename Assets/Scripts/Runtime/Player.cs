@@ -20,11 +20,17 @@ public class Player : MonoBehaviour
         if(uiInventory.gameObject.activeInHierarchy){
             postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
             uiInventory.gameObject.SetActive(false);
+
+            //Inventory close audio
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
         }
         else {
             uiInventory.gameObject.SetActive(true);
             uiInventory.SetInventory(inventory);
             postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
+
+            //Inventory open audio
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
         }
     }
 
@@ -34,12 +40,16 @@ public class Player : MonoBehaviour
         {
             postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
             uiJournal.gameObject.SetActive(false);
+            //Journal close audio
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.journalClose, this.transform.position);
         }
         else
         {
             uiJournal.gameObject.SetActive(true);
             uiJournal.DisplayQuestList();
             postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
+            //Journal open Audio
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.journalOpen, this.transform.position);
         }
     }
 

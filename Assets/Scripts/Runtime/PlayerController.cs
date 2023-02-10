@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using System;
-using FMODUnity;
+using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
-	private Rigidbody rb;
+    //Audio
+    private EventInstance playerFootstep;
+    //
+    private Rigidbody rb;
 	private NavMeshAgent agent;
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float slideOnLand;
@@ -43,9 +46,12 @@ public class PlayerController : MonoBehaviour
             {
 				case PlayerStates.IDLE:
 					anim.Play("Idle");
-					break;
+                    playerFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    break;
+                    
 				case PlayerStates.WALK:
 					anim.Play("Movement");
+                    playerFootstep.start();
 					break;
 			}
         }
@@ -180,84 +186,91 @@ public class PlayerController : MonoBehaviour
 		PlayerAutoMove = true;
 	}
 
+    //Adudio
+    private void Start()
+    {
+        playerFootstep = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstep);
+ 
+    }
 
-		/*
-		if (Input.GetMouseButtonDown(1))
-		{
-			TryJump();
-		}
-	}
 
-	public void TryJump()
-	{
-		if (!_isGrounded) return;
-		Debug.Log("Do jump tried");
-		DoJump();
-	}
+    /*
+    if (Input.GetMouseButtonDown(1))
+    {
+        TryJump();
+    }
+}
 
-	private void DoJump()
-	{
-		_horizontalJumpVelocity = agent.velocity;
-		DisableNavMeshAgent();
-		EnableRB();
-		_isGrounded = false;
-		rb.AddForce(new Vector3(_horizontalJumpVelocity.x, jumpForce, _horizontalJumpVelocity.z), ForceMode.Impulse);
-	}
+public void TryJump()
+{
+    if (!_isGrounded) return;
+    Debug.Log("Do jump tried");
+    DoJump();
+}
 
-	private void SetUpRigidbody()
-	{
-		rb = GetComponent<Rigidbody>();
-		if (rb == null)
-		{
-			gameObject.AddComponent<Rigidbody>();
-			rb = GetComponent<Rigidbody>();
-		}
-		DisableRB();
-		rb.freezeRotation = true;
-	}
+private void DoJump()
+{
+    _horizontalJumpVelocity = agent.velocity;
+    DisableNavMeshAgent();
+    EnableRB();
+    _isGrounded = false;
+    rb.AddForce(new Vector3(_horizontalJumpVelocity.x, jumpForce, _horizontalJumpVelocity.z), ForceMode.Impulse);
+}
 
-	// Effectively enables rigidbody.
-	private void EnableRB()
-	{
-		rb.isKinematic = false;
-		rb.useGravity = true;
-	}
+private void SetUpRigidbody()
+{
+    rb = GetComponent<Rigidbody>();
+    if (rb == null)
+    {
+        gameObject.AddComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+    }
+    DisableRB();
+    rb.freezeRotation = true;
+}
 
-	// Effectively disables rigidbody. Technically still enabled but won't do much.
-	private void DisableRB()
-	{
-		rb.isKinematic = true;
-		rb.useGravity = false;
-	}
+// Effectively enables rigidbody.
+private void EnableRB()
+{
+    rb.isKinematic = false;
+    rb.useGravity = true;
+}
 
-	private void EnableNavMeshAgent()
-	{
-		agent.Warp(transform.position);
-		if(Mathf.Abs(_horizontalJumpVelocity.x) > 0f || Mathf.Abs(_horizontalJumpVelocity.z) > 0f) agent.SetDestination(transform.position + (transform.forward * slideOnLand));
-		agent.updatePosition = true;
-		agent.updateRotation = true;
-		agent.isStopped = false;
-	}
+// Effectively disables rigidbody. Technically still enabled but won't do much.
+private void DisableRB()
+{
+    rb.isKinematic = true;
+    rb.useGravity = false;
+}
 
-	private void DisableNavMeshAgent()
-	{
-		agent.updatePosition = false;
-		agent.updateRotation = false;
-		agent.isStopped = true;
-	}
+private void EnableNavMeshAgent()
+{
+    agent.Warp(transform.position);
+    if(Mathf.Abs(_horizontalJumpVelocity.x) > 0f || Mathf.Abs(_horizontalJumpVelocity.z) > 0f) agent.SetDestination(transform.position + (transform.forward * slideOnLand));
+    agent.updatePosition = true;
+    agent.updateRotation = true;
+    agent.isStopped = false;
+}
 
-	private void OnCollisionEnter(Collision other)
-	{
-		Debug.Log(other.collider.tag);
-		if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded && rb.velocity.y <= 0f)
-		{ // Condition assumes all ground is tagged with "Ground".
-			Debug.Log("Condition met!");
-			DisableRB();
-			EnableNavMeshAgent();
-		*/
-			//_isGrounded = true;
+private void DisableNavMeshAgent()
+{
+    agent.updatePosition = false;
+    agent.updateRotation = false;
+    agent.isStopped = true;
+}
 
-	void OnDisable() {
+private void OnCollisionEnter(Collision other)
+{
+    Debug.Log(other.collider.tag);
+    if (other.collider != null && other.collider.tag == "Ground" && !_isGrounded && rb.velocity.y <= 0f)
+    { // Condition assumes all ground is tagged with "Ground".
+        Debug.Log("Condition met!");
+        DisableRB();
+        EnableNavMeshAgent();
+    */
+    //_isGrounded = true;
+
+    void OnDisable() {
 		inputProvider.FindAction("Directional Movements").Disable();
 		inputProvider.FindAction("Item Pickup").Disable();
 		DragAndDrop.OnUIActionStart -= SetItemDragBool;

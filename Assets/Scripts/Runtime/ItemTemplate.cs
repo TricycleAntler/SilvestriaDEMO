@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemTemplate : MonoBehaviour
 {
+
     private Item item;
     private SpriteRenderer spriteRenderer;
     void Awake() {
@@ -54,7 +55,9 @@ public class ItemTemplate : MonoBehaviour
         this.item = item;
    }
 
+    // Picking up/selecting item
    public Item GetItem() {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupBerrySound, this.transform.position);
     return item;
    }
 
