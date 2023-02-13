@@ -5240,6 +5240,13 @@ MonoBehaviour:
       Data3: 1386998169
       Data4: -761453395
     Path: event:/UI/UI_SeedBag_close
+  <dialogueSFX>k__BackingField:
+    Guid:
+      Data1: -604815480
+      Data2: 1116725126
+      Data3: -1242764141
+      Data4: -604549602
+    Path: event:/UI/UI_Back
 --- !u!1001 &138442802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10394,36 +10401,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7907590927387358229, guid: 2c528091ee782344f84bc4794999176b, type: 3}
   m_PrefabInstance: {fileID: 1225456744}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &315263155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315263153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 311336314
-      Data2: 1269211230
-      Data3: -595311950
-      Data4: -1863853156
-    Path: event:/UI/UI_Dialogue_Popup
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &316256035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25350,7 +25327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70105624
+      value: 0.7010562
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -25358,11 +25335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7010561
+      value: 0.7010562
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09230521
+      value: -0.09230522
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719651932573, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_XAxis.Value
@@ -39244,36 +39221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5512026212689261309, guid: 2c528091ee782344f84bc4794999176b, type: 3}
   m_PrefabInstance: {fileID: 1225456744}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1225456751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225456749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 311336314
-      Data2: 1269211230
-      Data3: -595311950
-      Data4: -1863853156
-    Path: event:/UI/UI_Dialogue_Popup
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &1225596599
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,6 +28,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Inventory close SFX")]
     [field: SerializeField] public EventReference inventoryClose { get; private set; }
 
+    [field: Header("Dialogue SFX")]
+    [field: SerializeField] public EventReference dialogueSFX { get; private set; }
+
 
 
 

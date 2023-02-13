@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
 
 
 public class DialogueManager : MonoBehaviour
@@ -31,12 +32,14 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT = "portrait";
     private const string LAYOUT = "layout";
     private const string SPEED = "speed";
-
+    //Dialogue Audio
+    private EventInstance dialogueSFX;
+    //
     public static DialogueManager Instance;
     public static event Action<string> OnDialogueExit;
 
     private void Awake() {
-        if(Instance != null) {
+        if (Instance != null) {
             Debug.Log("More than One Dialogue Manager Instance Present");
             Destroy(this.gameObject);
             return;
@@ -57,17 +60,18 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialogueBox.SetActive(false);
+        dialogueSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.dialogueSFX);
     }
     private void ManageTags() {
         tags = story.currentTags;
-        foreach(var tag in tags){
-            if(tag.Split(":").Length !=2) {
-                Debug.Log("Tag Incorrect :"+tag);
+        foreach (var tag in tags) {
+            if (tag.Split(":").Length != 2) {
+                Debug.Log("Tag Incorrect :" + tag);
             }
             string tagKey = tag.Split(":")[0].Trim();
             string tagValue = tag.Split(":")[1].Trim();
 
-            switch(tagKey) {
+            switch (tagKey) {
                 case SPEAKER:
                     SetSpeakerName(tagValue);
                     break;
@@ -86,8 +90,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON,string characterName) {
-        if(dialogueIsPlaying) {
+    public void EnterDialogueMode(TextAsset inkJSON, string characterName) {
+        if (dialogueIsPlaying) {
             return;
         }
         else {
@@ -100,6 +104,7 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialogueBox.SetActive(true);
             ContinueStory();
+
         }
     }
 
@@ -115,7 +120,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void ContinueStory() {
-        if(!story.canContinue && !isTyping) {
+        if (!story.canContinue && !isTyping) {
             ExitDialogueMode();
             return;
         }
@@ -139,9 +144,10 @@ public class DialogueManager : MonoBehaviour
         textSpeedInMilSecs = speedVal * 0.001f;
     }
 
+
     private void SetPortrait(string tagValue) {
-        foreach(CharacterUiBehaviour characterUI in characterUIs) {
-            if(characterUI.tagName == tagValue){
+        foreach (CharacterUiBehaviour characterUI in characterUIs) {
+            if (characterUI.tagName == tagValue) {
                 speakerObj.gameObject.GetComponentInChildren<Image>().sprite = characterUI.characterSprite;
                 return;
             }
@@ -149,8 +155,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void AdjustPortrait(string tagValue) {
-        if(tagValue == "Left") {
-            foreach(GameObject speaker in speakers)
+        if (tagValue == "Left") {
+            foreach (GameObject speaker in speakers)
             {
                 if (speaker.name == "CharacterPortrait")
                 {
@@ -165,7 +171,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
         else {
-            foreach(GameObject speaker in speakers)
+            foreach (GameObject speaker in speakers)
             {
                 if (speaker.name == "CharacterPortraitNPC")
                 {
@@ -183,7 +189,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void UpdateDialogueSystem(InputAction.CallbackContext context) {
-        if(!dialogueIsPlaying) {
+        if (!dialogueIsPlaying) {
             return;
         }
         ContinueStory();
@@ -193,11 +199,14 @@ public class DialogueManager : MonoBehaviour
     {
         textBody.text = "";
         isTyping = true;
+        
         char[] textArray = currentText.ToCharArray();
         foreach (char letter in textArray)
+
         {
             textBody.text += letter;
             yield return new WaitForSeconds(textSpeedInMilSecs);
+            dialogueSFX.start();
         }
         isTyping = false;
         yield return null;
@@ -207,5 +216,7 @@ public class DialogueManager : MonoBehaviour
         DialogueTrigger.OnDialogueActivated -= EnterDialogueMode;
         inputProvider.FindAction("Skip Dialogue").Disable();
     }
+
+   
 
 }
