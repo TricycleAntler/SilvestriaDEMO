@@ -1047,6 +1047,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1885415149
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6456625858324689992, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 423.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 575.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Path
+      value: event:/Ambiance/AMBianceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Path
+      value: event:/Music/MusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data1
+      value: 29542719
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data2
+      value: 1327648951
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data3
+      value: -1037533514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data4
+      value: 1867558513
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data1
+      value: -913541279
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data2
+      value: 1111921900
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data3
+      value: -2104490613
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data4
+      value: 993566301
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
 --- !u!1 &1915274281
 GameObject:
   m_ObjectHideFlags: 0

@@ -100,3 +100,17 @@ MonoBehaviour:
       Data3: -652898430
       Data4: -1474713524
     Path: event:/UI/Dialogue
+  <ambianceSFX>k__BackingField:
+    Guid:
+      Data1: 29542719
+      Data2: 1327648951
+      Data3: -1037533514
+      Data4: 1867558513
+    Path: event:/Ambiance/AMBianceManager
+  <musicPlayer>k__BackingField:
+    Guid:
+      Data1: -913541279
+      Data2: 1111921900
+      Data3: -2104490613
+      Data4: 993566301
+    Path: event:/Music/MusicManager
