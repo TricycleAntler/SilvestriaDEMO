@@ -61,8 +61,8 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         //Audio, get FMOD event, start event and set dialogue status to "not talking"
         dialogueSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.dialogueSFX);
-        dialogueSFX.start();
-        dialogueSFX.setParameterByName("DialogueStatus", 0f);
+        
+
     }
     private void ManageTags() {
         tags = story.currentTags;
@@ -106,6 +106,8 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialogueBox.SetActive(true);
             ContinueStory();
+            //Audio start dialogue event
+            dialogueSFX.start();
 
         }
     }
@@ -119,6 +121,9 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);
         textBody.text = "";
+        //Audio stop dialogue event
+        dialogueSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
 
     private void ContinueStory() {

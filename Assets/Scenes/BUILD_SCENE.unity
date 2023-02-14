@@ -71112,6 +71112,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6456625858089671251, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858089671261, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6456625858324689992, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -71159,6 +71167,46 @@ PrefabInstance:
     - target: {fileID: 6456625858324689998, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Path
+      value: event:/Ambiance/AMBianceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Path
+      value: event:/Music/MusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data1
+      value: 29542719
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data2
+      value: 1327648951
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data3
+      value: -1037533514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <ambianceSFX>k__BackingField.Guid.Data4
+      value: 1867558513
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data1
+      value: -913541279
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data2
+      value: 1111921900
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data3
+      value: -2104490613
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <musicPlayer>k__BackingField.Guid.Data4
+      value: 993566301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}

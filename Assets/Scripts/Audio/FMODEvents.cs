@@ -6,6 +6,7 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     // FMOD Events
+    // SFX Events
 
     [field: Header("Pickup Berry SFX")]
     [field: SerializeField] public EventReference pickupBerrySound { get; private set; }
@@ -30,6 +31,13 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Dialogue SFX")]
     [field: SerializeField] public EventReference dialogueSFX { get; private set; }
+
+    [field: Header("Ambiance SFX")]
+    [field: SerializeField] public EventReference ambianceSFX { get; private set; }
+
+    //Music Events
+    [field: Header("Music Player")]
+    [field: SerializeField] public EventReference musicPlayer { get; private set; }
 
 
 

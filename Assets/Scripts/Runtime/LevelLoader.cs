@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] private float transitionTime = 2f;
     public Animator transition;
+    //Sound and music
+    private EventInstance ambianceSFX;
+    private EventInstance musicPlayer;
+
 
     public void LoadPlayScene()
     {
@@ -32,5 +37,13 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    private void Start()
+    {
+        ambianceSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ambianceSFX);
+        ambianceSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        ambianceSFX.start();
+        musicPlayer = AudioManager.instance.CreateEventInstance(FMODEvents.instance.musicPlayer);
     }
 }
