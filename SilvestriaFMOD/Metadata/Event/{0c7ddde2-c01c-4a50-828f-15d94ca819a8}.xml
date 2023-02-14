@@ -113,7 +113,7 @@
 			<value>true</value>
 		</property>
 		<relationship name="triggerConditions">
-			<destination>{38409269-b9c0-480f-86dc-f5fe484aa51d}</destination>
+			<destination>{67c10beb-9900-4f8c-9b2f-14fd481dfb50}</destination>
 		</relationship>
 		<relationship name="sounds">
 			<destination>{10e9aaa9-cdec-4eae-a8f3-e936d0a427bb}</destination>
@@ -158,7 +158,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{669b96a2-40e5-4815-8fb1-4a91c7b902a8}" />
 	<object class="MixerBusFader" id="{af30f40d-4f11-49ea-a63d-7a81c959bc1b}" />
-	<object class="ParameterCondition" id="{38409269-b9c0-480f-86dc-f5fe484aa51d}">
+	<object class="ParameterCondition" id="{67c10beb-9900-4f8c-9b2f-14fd481dfb50}">
 		<property name="minimum">
 			<value>1</value>
 		</property>

@@ -32,11 +32,10 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT = "portrait";
     private const string LAYOUT = "layout";
     private const string SPEED = "speed";
-    //Dialogue Audio
-    private EventInstance dialogueSFX;
-    //
     public static DialogueManager Instance;
     public static event Action<string> OnDialogueExit;
+    //Dialogue Audio
+    private EventInstance dialogueSFX;
 
     private void Awake() {
         if (Instance != null) {
@@ -60,7 +59,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialogueBox.SetActive(false);
+        //Audio, get FMOD event, start event and set dialogue status to "not talking"
         dialogueSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.dialogueSFX);
+        dialogueSFX.start();
+        dialogueSFX.setParameterByName("DialogueStatus", 0f);
     }
     private void ManageTags() {
         tags = story.currentTags;
@@ -206,10 +208,13 @@ public class DialogueManager : MonoBehaviour
         {
             textBody.text += letter;
             yield return new WaitForSeconds(textSpeedInMilSecs);
-            dialogueSFX.start();
+            //Audio change dialogue state to "talking"
+            dialogueSFX.setParameterByName("DialogueStatus", 1f);
         }
         isTyping = false;
         yield return null;
+        //Audio change dialogue state to "not talking"
+        dialogueSFX.setParameterByName("DialogueStatus", 0f);
     }
 
     private void OnDisable() {

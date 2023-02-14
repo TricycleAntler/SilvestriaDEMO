@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8365382979942790450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8365382979942790453}
+  - component: {fileID: 8365382979942790452}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8365382979942790453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365382979942790450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8365382979942790452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365382979942790450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f123ae4a0987b4ca9ddba74e6a6451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <pickupBerrySound>k__BackingField:
+    Guid:
+      Data1: -1824795259
+      Data2: 1133754993
+      Data3: -1541121377
+      Data4: 768926989
+    Path: event:/UI/UI_Select
+  <playerFootstep>k__BackingField:
+    Guid:
+      Data1: 434716885
+      Data2: 1103369369
+      Data3: -806477146
+      Data4: -239259018
+    Path: event:/Player Actions/UI_PlayerAction_squirrel_movement
+  <questPopup>k__BackingField:
+    Guid:
+      Data1: 608064272
+      Data2: 1287506897
+      Data3: 1567469738
+      Data4: 108091686
+    Path: event:/UI/UI_QuestPopup
+  <journalOpen>k__BackingField:
+    Guid:
+      Data1: -2058026509
+      Data2: 1156628002
+      Data3: 1952233912
+      Data4: 2037398942
+    Path: event:/UI/UI_Journal_Open
+  <journalClose>k__BackingField:
+    Guid:
+      Data1: -1405815554
+      Data2: 1206523475
+      Data3: -234714197
+      Data4: 189527602
+    Path: event:/UI/UI_Journal_Close
+  <inventoryOpen>k__BackingField:
+    Guid:
+      Data1: 1158134479
+      Data2: 1298749627
+      Data3: 1931713930
+      Data4: -1219348814
+    Path: event:/UI/UI_SeedBag_open
+  <inventoryClose>k__BackingField:
+    Guid:
+      Data1: -1853422849
+      Data2: 1168313509
+      Data3: 1386998169
+      Data4: -761453395
+    Path: event:/UI/UI_SeedBag_close
+  <dialogueSFX>k__BackingField:
+    Guid:
+      Data1: 209575394
+      Data2: 1246806044
+      Data3: -652898430
+      Data4: -1474713524
+    Path: event:/UI/Dialogue
