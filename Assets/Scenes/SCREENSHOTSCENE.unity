@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1622973682}
-  m_IndirectSpecularColor: {r: 0.15498534, g: 0.29027897, b: 0.36046034, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5660,7 +5660,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -25271,7 +25271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25279,19 +25279,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.67953986
+      value: 0.6785302
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19551381
+      value: 0.19898944
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6795398
+      value: -0.67853016
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.19551378
+      value: 0.19898942
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
@@ -30916,6 +30916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 1916545395}
+  ListenerNumber: -1
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55535,6 +55536,9 @@ MonoBehaviour:
   uiInventory: {fileID: 0}
   inputProvider: {fileID: 0}
   moveSpeed: 2
+  anim: {fileID: 0}
+  sr: {fileID: 0}
+  currentState: 0
 --- !u!195 &1634121180
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -65441,6 +65445,9 @@ MonoBehaviour:
   uiInventory: {fileID: 658242209}
   inputProvider: {fileID: -944628639613478452, guid: 7534235d1bb352b47bd996e960098106, type: 3}
   moveSpeed: 2
+  anim: {fileID: 0}
+  sr: {fileID: 0}
+  currentState: 0
 --- !u!114 &1916545405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65454,6 +65461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiInventory: {fileID: 658242209}
+  postProcessingEffects: {fileID: 0}
+  uiJournal: {fileID: 0}
 --- !u!54 &1916545406
 Rigidbody:
   m_ObjectHideFlags: 0

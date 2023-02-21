@@ -135,6 +135,8 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();
             textBody.text = story.currentText;
             isTyping = false;
+            //Audio if dialogue is skipped, set parameter to "not talking"
+            dialogueSFX.setParameterByName("DialogueStatus", 0f);
         }
         else {
             story.Continue();

@@ -18,11 +18,16 @@ public class LevelLoader : MonoBehaviour
     public void LoadPlayScene()
     {
         StartCoroutine(LoadLevel(1));
+        ambianceSFX.start();
+        musicPlayer.start();
     }
 
     public void LoadOuttro()
     {
         StartCoroutine(LoadLevel(2));
+        //musicPlayer.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //ambianceSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
 
     public void LoadIntro()
@@ -41,9 +46,10 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
+        //Audio and music
         ambianceSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ambianceSFX);
         ambianceSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-        ambianceSFX.start();
         musicPlayer = AudioManager.instance.CreateEventInstance(FMODEvents.instance.musicPlayer);
+        
     }
 }

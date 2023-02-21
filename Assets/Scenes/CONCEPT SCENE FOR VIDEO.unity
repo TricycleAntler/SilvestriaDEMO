@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1622973682}
-  m_IndirectSpecularColor: {r: 0.15498534, g: 0.29027897, b: 0.36046034, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6203,7 +6203,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -33282,6 +33282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 1916545395}
+  ListenerNumber: -1
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70240,6 +70241,9 @@ MonoBehaviour:
   uiInventory: {fileID: 658242209}
   inputProvider: {fileID: -944628639613478452, guid: 7534235d1bb352b47bd996e960098106, type: 3}
   moveSpeed: 2
+  anim: {fileID: 0}
+  sr: {fileID: 0}
+  currentState: 0
 --- !u!114 &1916545405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77173,13 +77177,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.21774563, g: 0.30778304, b: 0.35809812, a: 0.7647059}
-  deepColor: {r: 0.021568628, g: 0.06269759, b: 0.103859656, a: 0.84705883}
+  shallowColor: {r: 0.21766984, g: 0.30770725, b: 0.35802233, a: 0.7647059}
+  deepColor: {r: 0.08594587, g: 0.20775717, b: 0.26718152, a: 0.6117647}
   colorDepth: 2.59
   horizonColor: {r: 0.72979707, g: 0.75471693, b: 0.7531253, a: 1}
   horizonDistance: 15.9
   shoreFade: 0
-  shoreColor: {r: 0.27309757, g: 0.16450182, b: 0.08606804, a: 0}
+  shoreColor: {r: 0.27302182, g: 0.16442999, b: 0.086006574, a: 0}
   shoreStrength: 0
   shoreBlend: 10
   shoreDepth: 0
@@ -77192,8 +77196,8 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.307
   surfaceFoamDistortion: 0.73
   surfaceFoamBlend: 0.729
-  surfaceFoamColor1: {r: 0.2919165, g: 0.2919165, b: 0.2919165, a: 0.3215686}
-  surfaceFoamColor2: {r: 0.36752728, g: 0.33802393, b: 0.33802393, a: 0.7294118}
+  surfaceFoamColor1: {r: 0.2918407, g: 0.2918407, b: 0.2918407, a: 0.3215686}
+  surfaceFoamColor2: {r: 0.36745152, g: 0.33794814, b: 0.33794814, a: 0.7294118}
   surfaceFoamMovement: {x: 0, y: 0, z: 0.019, w: 0.133}
   surfaceFoamDirection1: 0
   surfaceFoamDirection2: 0.019
@@ -77204,7 +77208,7 @@ MonoBehaviour:
   surfaceFoamOffsetY: 0.359
   surfaceFoamScale1: 0.166
   surfaceFoamScale2: 0.179
-  enableSurfaceFoam: 1
+  enableSurfaceFoam: 0
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
   enableHeightMask: 0
@@ -77237,10 +77241,10 @@ MonoBehaviour:
   lightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
   lightingHardness: 0
   normalsTexture: {fileID: 2800000, guid: a41da5f5671718b47bbc71e9ef691103, type: 3}
-  normalsMovement: {x: 0.084, y: 0.04}
+  normalsMovement: {x: 0.3, y: 0.064}
   normalsStrength: 0.29
-  normalsScale: 0.04
-  normalsSpeed: 0.084
+  normalsScale: 0.064
+  normalsSpeed: 0.3
   refractionStrength: 0.018
   waveVisuals: {x: 0.037, y: 3, z: 1.06}
   waveSteepness: 0.037

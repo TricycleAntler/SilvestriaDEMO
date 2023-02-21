@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 6389613801925849642}
-  m_IndirectSpecularColor: {r: 0.15498534, g: 0.29027897, b: 0.36046034, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4749,7 +4749,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -29472,6 +29472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 1916545395}
+  ListenerNumber: -1
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0

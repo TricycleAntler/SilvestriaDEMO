@@ -14,6 +14,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player Footstep SFX")]
     [field: SerializeField] public EventReference playerFootstep { get; private set; }
 
+    [field: Header("Player AutoWalk SFX")]
+    [field: SerializeField] public EventReference playerAutowalk { get; private set; }
+
     [field: Header("Quest popup SFX")]
     [field: SerializeField] public EventReference questPopup { get; private set; }
 

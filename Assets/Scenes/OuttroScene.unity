@@ -178,6 +178,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <playerAutowalk>k__BackingField.Path
+      value: event:/Player Actions/Player_AutoWalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <playerAutowalk>k__BackingField.Guid.Data1
+      value: -1715616420
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <playerAutowalk>k__BackingField.Guid.Data2
+      value: 1094705587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <playerAutowalk>k__BackingField.Guid.Data3
+      value: 1020691633
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
+      propertyPath: <playerAutowalk>k__BackingField.Guid.Data4
+      value: 1853601110
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
 --- !u!1 &38155891

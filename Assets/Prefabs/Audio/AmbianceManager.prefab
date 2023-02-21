@@ -51,7 +51,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   Event: 
   PlayEvent: 11
   StopEvent: 12

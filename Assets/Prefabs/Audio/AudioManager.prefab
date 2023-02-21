@@ -126,6 +126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FMODEvents
       objectReference: {fileID: 0}
+    - target: {fileID: 8365382979942790452, guid: b4b7afed47ec1e64eaccfc17a391391e, type: 3}
+      propertyPath: <playerFootstep>k__BackingField.Path
+      value: event:/Player Actions/Player_Footstep
+      objectReference: {fileID: 0}
     - target: {fileID: 8365382979942790453, guid: b4b7afed47ec1e64eaccfc17a391391e, type: 3}
       propertyPath: m_RootOrder
       value: 4

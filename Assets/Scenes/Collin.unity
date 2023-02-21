@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44093558, g: 0.48210484, b: 0.5290101, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2572,7 +2572,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -14168,7 +14168,7 @@ SpriteRenderer:
   m_Size: {x: 10.71, y: 5.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &776180499
@@ -15292,7 +15292,7 @@ SpriteRenderer:
   m_Size: {x: 3.88, y: 2.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &858730995
@@ -17225,6 +17225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 1916545395}
+  ListenerNumber: -1
 --- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23551,7 +23552,7 @@ SpriteRenderer:
   m_Size: {x: 40.97, y: 23.105639}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1273101437
@@ -30037,7 +30038,7 @@ SpriteRenderer:
   m_Size: {x: 15.88, y: 16.79}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1624039308
@@ -34975,6 +34976,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 4
   slideOnLand: 0.4
+  uiInventory: {fileID: 0}
+  inputProvider: {fileID: 0}
+  moveSpeed: 0
+  anim: {fileID: 0}
+  sr: {fileID: 0}
+  currentState: 0
 --- !u!114 &1916545405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36555,7 +36562,7 @@ SpriteRenderer:
   m_Size: {x: 9.82, y: 5.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2012572780

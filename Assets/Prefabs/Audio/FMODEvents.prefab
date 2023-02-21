@@ -57,7 +57,14 @@ MonoBehaviour:
       Data2: 1103369369
       Data3: -806477146
       Data4: -239259018
-    Path: event:/Player Actions/UI_PlayerAction_squirrel_movement
+    Path: event:/Player Actions/Player_Footstep
+  <playerAutowalk>k__BackingField:
+    Guid:
+      Data1: -1715616420
+      Data2: 1094705587
+      Data3: 1020691633
+      Data4: 1853601110
+    Path: event:/Player Actions/Player_AutoWalk
   <questPopup>k__BackingField:
     Guid:
       Data1: 608064272
@@ -106,7 +113,7 @@ MonoBehaviour:
       Data2: 1327648951
       Data3: -1037533514
       Data4: 1867558513
-    Path: event:/Ambiance/AMBianceManager
+    Path: event:/Ambiance/Test
   <musicPlayer>k__BackingField:
     Guid:
       Data1: -913541279

@@ -24698,15 +24698,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016993403
+      value: -0.016993402
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70690256
+      value: 0.7069026
       objectReference: {fileID: 0}
     - target: {fileID: 4671523718170607579, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.016993403
+      value: 0.016993405
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719215348841, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24762,7 +24762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09230521
+      value: 0.09230522
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.y
@@ -24770,7 +24770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719606530444, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09230521
+      value: -0.09230522
       objectReference: {fileID: 0}
     - target: {fileID: 4671523719651932573, guid: b1e308d014843cd4fb9daa19b0211fbf, type: 3}
       propertyPath: m_XAxis.Value
@@ -30513,7 +30513,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.024032291, y: 0.000000029802322, z: -0.0000000027939677, w: 0.9997113}
+  m_LocalRotation: {x: -0.024032293, y: 0.00000014901161, z: 0.000000011175871, w: 0.9997113}
   m_LocalPosition: {x: -97.98791, y: 6.1996794, z: 404.14566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -71170,11 +71170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
       propertyPath: <ambianceSFX>k__BackingField.Path
-      value: event:/Ambiance/AMBianceManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
-      propertyPath: <musicPlayer>k__BackingField.Path
-      value: event:/Music/MusicManager
+      value: event:/Ambiance/Test
       objectReference: {fileID: 0}
     - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
       propertyPath: <ambianceSFX>k__BackingField.Guid.Data1
@@ -71191,22 +71187,6 @@ PrefabInstance:
     - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
       propertyPath: <ambianceSFX>k__BackingField.Guid.Data4
       value: 1867558513
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
-      propertyPath: <musicPlayer>k__BackingField.Guid.Data1
-      value: -913541279
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
-      propertyPath: <musicPlayer>k__BackingField.Guid.Data2
-      value: 1111921900
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
-      propertyPath: <musicPlayer>k__BackingField.Guid.Data3
-      value: -2104490613
-      objectReference: {fileID: 0}
-    - target: {fileID: 6456625858336358222, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}
-      propertyPath: <musicPlayer>k__BackingField.Guid.Data4
-      value: 993566301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744f8dca904d27045b198dab3b8eea96, type: 3}

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     //Audio
     private EventInstance playerFootstep;
+    //private EventInstance playerAutowalk;
     //
     private Rigidbody rb;
 	private NavMeshAgent agent;
@@ -91,11 +92,13 @@ public class PlayerController : MonoBehaviour
 				//Debug.Log("Disabling nav mesh agent");
 				PlayerAutoMove = false;
 				agent.isStopped = true;
+                
 				//testing
 				//Have a dialogueVariables object in a singleton instance (quest system) to access ink variables
 				//DialogueManager.Instance.dialogueVariables.ModifyGlobalVars();
 			}
 		}
+        
 		MoveCharacter();
 		SetInventoryActiveStatus();
 	}
@@ -184,11 +187,13 @@ public class PlayerController : MonoBehaviour
 	public void GetItemDropPosition(Vector3 position) {
 		dropPosition = position;
 		PlayerAutoMove = true;
+
 	}
 
     //Adudio
     private void Start()
     {
+        //playerAutowalk = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerAutowalk);
         playerFootstep = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstep);
  
     }

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{19e940d5-1499-41c4-a622-eecf7632bdf1}">
 		<property name="name">
-			<value>UI_PlayerAction_squirrel_movement</value>
+			<value>Player_Footstep</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -57,7 +57,7 @@
 			<destination>{51a86655-ffaa-41eb-8463-ae7e13402705}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{dcb8100f-6ca9-4d10-9161-965fbf05bc21}</destination>
+			<destination>{ddb7f2d8-b111-4f3e-a991-e88af1a5e31c}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6992d177-d5d0-427e-83e0-e0512fbcc877}" />
