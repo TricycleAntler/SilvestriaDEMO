@@ -6,7 +6,7 @@ using System;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public static event Action<bool> OnUIActionStart;
+    public static event Action<bool,Item> OnUIActionStart;
     public static event Action<Vector3> OnSeedDrop;
     private RectTransform rectTransform;
     private Transform itemPosition;
@@ -22,11 +22,14 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log("On Begin Drag");
-        OnUIActionStart?.Invoke(true);
+        //OnUIActionStart?.Invoke(true);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("On Pointer Down");
+        Debug.Log("On Pointer Down");
+        Item thisItem = this.GetComponent<ItemTemplate>().GetItem();
+        OnUIActionStart?.Invoke(true,thisItem);
+        player.HideInventory();
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
@@ -56,6 +59,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             //should work when the object is placed on a different layer other than ground
             transform.localPosition = Vector3.zero;
         }
-        OnUIActionStart?.Invoke(false);
+        //OnUIActionStart?.Invoke(false);
     }
 }

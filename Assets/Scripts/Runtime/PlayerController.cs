@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
 	private Vector3 _horizontalJumpVelocity = Vector3.zero;
 	private Vector3 dropPosition;
 	private Vector2 moveVals;
-	private bool itemDragStarted;
+	//private bool itemDragStarted;
+	private Item item;
+	private Player player;
+	private bool itemClicked;
 	private bool inventoryOpened;
 	private bool playerAutoMove;
     public bool PlayerAutoMove { get => playerAutoMove; set => playerAutoMove = value; }
@@ -48,7 +51,6 @@ public class PlayerController : MonoBehaviour
 					anim.Play("Idle");
                     playerFootstep.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     break;
-                    
 				case PlayerStates.WALK:
 					anim.Play("Movement");
                     playerFootstep.start();
@@ -61,13 +63,15 @@ public class PlayerController : MonoBehaviour
     void Awake()
 	{
 		inventoryOpened = false;
-		itemDragStarted = false;
+		//itemDragStarted = false;
+		itemClicked = false;
 		agent = GetComponent<NavMeshAgent>();
 		if (agent == null)
 		{
 			gameObject.AddComponent<NavMeshAgent>();
 			agent = GetComponent<NavMeshAgent>();
 		}
+		player = this.GetComponent<Player>();
 		//SetUpRigidbody();
 		//inputProvider.FindActionMap("PlayerMovements").FindAction("Directional Movements").performed += ManagePlayerMovement;
 	}
@@ -75,7 +79,7 @@ public class PlayerController : MonoBehaviour
 	void OnEnable() {
 		inputProvider.FindAction("Directional Movements").Enable();
 		inputProvider.FindAction("Item Pickup").Enable();
-		DragAndDrop.OnUIActionStart += SetItemDragBool;
+		DragAndDrop.OnUIActionStart += SetItemClickBool;
 		DragAndDrop.OnSeedDrop += GetItemDropPosition;
 	}
 
@@ -91,13 +95,12 @@ public class PlayerController : MonoBehaviour
 				//Debug.Log("Disabling nav mesh agent");
 				PlayerAutoMove = false;
 				agent.isStopped = true;
-				//testing
-				//Have a dialogueVariables object in a singleton instance (quest system) to access ink variables
-				//DialogueManager.Instance.dialogueVariables.ModifyGlobalVars();
 			}
 		}
-		MoveCharacter();
-		SetInventoryActiveStatus();
+		else {
+			MoveCharacter();
+			SetInventoryActiveStatus();
+		}
 	}
 
 	public void OnPlayerMove(InputAction.CallbackContext context) {
@@ -130,14 +133,26 @@ public class PlayerController : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 			//this bool checks if there is something over the UI
-			if (Physics.Raycast(ray, out hit, Mathf.Infinity) && !inventoryOpened && !itemDragStarted)
+			//distance should be changed from mathf.infinity
+			if (Physics.Raycast(ray, out hit, 10f))
 			{
-				ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
-				if(itemTemplate != null) {
-					Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
-					inventoryObject.AddItem(itemTemplate.GetItem());
-					QuestManager.Instance.CheckCollectingQuestStatus(itemTemplate.GetItem().itemID);
-					itemTemplate.DestroyItemTemplate();
+				if(!inventoryOpened && !itemClicked) {
+					//add item to inventory
+					ItemTemplate itemTemplate = hit.collider.GetComponent<ItemTemplate>();
+					if(itemTemplate != null) {
+						Inventory inventoryObject = this.GetComponent<Player>().GetPlayerInventory();
+						inventoryObject.AddItem(itemTemplate.GetItem());
+						QuestManager.Instance.CheckCollectingQuestStatus(itemTemplate.GetItem().itemID);
+						itemTemplate.DestroyItemTemplate();
+					}
+				}
+				else if (itemClicked) {
+					itemClicked = false;
+					Inventory inventory = player.GetPlayerInventory();
+					GetItemDropPosition(hit.point);
+					inventory.DropItem(this.item);
+					this.item = null;
+
 				}
 			}
 		}
@@ -168,8 +183,14 @@ public class PlayerController : MonoBehaviour
 	}
 
 
-	public void SetItemDragBool(bool dragVal) {
-		itemDragStarted = dragVal;
+	// public void SetItemDragBool(bool dragVal) {
+	// 	itemDragStarted = dragVal;
+	// }
+
+	public void SetItemClickBool(bool clickValue, Item item) {
+		itemClicked = clickValue;
+		this.item = item;
+		Debug.Log("The Item is : "+this.item);
 	}
 
 	public void SetInventoryActiveStatus() {
@@ -190,7 +211,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerFootstep = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstep);
- 
     }
 
 
@@ -273,7 +293,7 @@ private void OnCollisionEnter(Collision other)
     void OnDisable() {
 		inputProvider.FindAction("Directional Movements").Disable();
 		inputProvider.FindAction("Item Pickup").Disable();
-		DragAndDrop.OnUIActionStart -= SetItemDragBool;
+		DragAndDrop.OnUIActionStart -= SetItemClickBool;
 		DragAndDrop.OnSeedDrop -= GetItemDropPosition;
 	}
 }
