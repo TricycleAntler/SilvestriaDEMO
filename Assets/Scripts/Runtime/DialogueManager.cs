@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private PostProcessingEffects postProcessingEffects;
     [SerializeField] private List<GameObject> speakers;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject inventoryBtn;
+    [SerializeField] private GameObject journalBtn;
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private List<CharacterUiBehaviour> characterUIs;
     [Header("Global Vars Ink File")]
@@ -61,7 +63,6 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         //Audio, get FMOD event, start event and set dialogue status to "not talking"
         dialogueSFX = AudioManager.instance.CreateEventInstance(FMODEvents.instance.dialogueSFX);
-        
 
     }
     private void ManageTags() {
@@ -105,6 +106,8 @@ public class DialogueManager : MonoBehaviour
             //speakers.SetActive(true);
             dialoguePanel.SetActive(true);
             dialogueBox.SetActive(true);
+            inventoryBtn.SetActive(false);
+            journalBtn.SetActive(false);
             ContinueStory();
             //Audio start dialogue event
             dialogueSFX.start();
@@ -120,6 +123,8 @@ public class DialogueManager : MonoBehaviour
         //speakers.SetActive(false);
         dialogueBox.SetActive(false);
         dialoguePanel.SetActive(false);
+        inventoryBtn.SetActive(true);
+            journalBtn.SetActive(true);
         textBody.text = "";
         //Audio stop dialogue event
         dialogueSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
