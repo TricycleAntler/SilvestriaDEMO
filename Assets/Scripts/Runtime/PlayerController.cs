@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
 {
     //Audio
     private EventInstance playerFootstep;
-    //
+    //LayerMask
+	public LayerMask groundLayer;
+	//
     private Rigidbody rb;
 	private NavMeshAgent agent;
 	[SerializeField] private float jumpForce;
@@ -85,22 +87,24 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
+		MoveCharacter();
+		SetInventoryActiveStatus();
 		//player moves to the position where the seed is dropped
-		if(PlayerAutoMove) {
-			agent.isStopped = false;
-			agent.SetDestination(dropPosition);
-			float playerXPos = transform.position.x;
-			float destinationXPos = dropPosition.x;
-			if(playerXPos == destinationXPos) {
-				//Debug.Log("Disabling nav mesh agent");
-				PlayerAutoMove = false;
-				agent.isStopped = true;
-			}
-		}
-		else {
-			MoveCharacter();
-			SetInventoryActiveStatus();
-		}
+		// if(PlayerAutoMove) {
+		// 	agent.isStopped = false;
+		// 	agent.SetDestination(dropPosition);
+		// 	float playerXPos = transform.position.x;
+		// 	float destinationXPos = dropPosition.x;
+		// 	if(playerXPos == destinationXPos) {
+		// 		//Debug.Log("Disabling nav mesh agent");
+		// 		PlayerAutoMove = false;
+		// 		agent.isStopped = true;
+		// 	}
+		// }
+		// else {
+		// 	MoveCharacter();
+		// 	SetInventoryActiveStatus();
+		// }
 	}
 
 	public void OnPlayerMove(InputAction.CallbackContext context) {
@@ -150,9 +154,15 @@ public class PlayerController : MonoBehaviour
 					itemClicked = false;
 					Inventory inventory = player.GetPlayerInventory();
 					GetItemDropPosition(hit.point);
-					inventory.DropItem(this.item);
-					this.item = null;
-
+					QuestManager.Instance.CheckPlantingQuestStatus(this.item.itemID);
+					//TODO :Instantiate planting logic here
+					//get item id from this.item
+					if(playerAutoMove) {
+						PlantTemplate.SpawnPlant(dropPosition, new Plant {plantID = this.item.itemID});
+						inventory.DropItem(this.item);
+						this.item = null;
+						PlayerAutoMove = false;
+					}
 				}
 			}
 		}
@@ -203,8 +213,15 @@ public class PlayerController : MonoBehaviour
 	}
 
 	public void GetItemDropPosition(Vector3 position) {
-		dropPosition = position;
-		PlayerAutoMove = true;
+		RaycastHit hit;
+		position.y = 12f;
+		if(Physics.Raycast(position, Vector3.down,out hit,Mathf.Infinity,groundLayer)) {
+                float yPosition = hit.point.y + 0.5f;
+                position.y = yPosition;
+				dropPosition = position;
+				Debug.Log("drop position assigned");
+				PlayerAutoMove = true; //just a temp solution to check if the spawn position is assigned correctly
+        }
 	}
 
     //Adudio

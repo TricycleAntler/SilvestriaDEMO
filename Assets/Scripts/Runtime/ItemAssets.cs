@@ -11,13 +11,17 @@ public class ItemAssets : MonoBehaviour
     public Sprite dryGrassSprite;
     public Sprite oakSprite;
     public Transform itemTemplatePrefab;
+    public Transform plantTemplatePrefab;
 
     [Header("Plant States")]
-    public Sprite dustPileSprite;
+
+    //For Berry Tree
+    public Sprite dirtPileSprite;
     public Sprite seedSprite;
     public Sprite saplingSprite;
     public Sprite plantSprite;
     public Sprite treeSprite;
+    //TODO : Add other plant assets here
 
     public static ItemAssets Instance {get; private set;}
     void Awake() {

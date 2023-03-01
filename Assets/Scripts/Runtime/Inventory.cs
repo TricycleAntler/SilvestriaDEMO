@@ -15,7 +15,7 @@ public class Inventory
     public void AddItem(Item item) {
         if(item.IsStackable()) {
             bool itemAlreadyExistInInventory = false;
-            Debug.Log(itemAlreadyExistInInventory); //inv check
+            Debug.Log(itemAlreadyExistInInventory); //inv check TODO : REMOVE COMMENT
             foreach(Item invItem in itemList) {
                 if(invItem.itemType == item.itemType) {
                     invItem.amount += 1;
