@@ -18,20 +18,28 @@ public class Player : MonoBehaviour
 
     public void DisplayInventory() {
         if(uiInventory.gameObject.activeInHierarchy){
-            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
-            uiInventory.gameObject.SetActive(false);
-
-            //Inventory close audio
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
+            HideInventory();
         }
         else {
-            uiInventory.gameObject.SetActive(true);
-            uiInventory.SetInventory(inventory);
-            postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
-
-            //Inventory open audio
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
+            ShowInventory();
         }
+    }
+
+    public void ShowInventory() {
+        uiInventory.gameObject.SetActive(true);
+        uiInventory.SetInventory(inventory);
+        postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceInteraction);
+
+        //Inventory open audio
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
+    }
+
+    public void HideInventory() {
+         postProcessingEffects.ChangeDepthOfField(postProcessingEffects.focusDistanceNormal);
+        uiInventory.gameObject.SetActive(false);
+
+        //Inventory close audio
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.inventoryClose, this.transform.position);
     }
 
     public void DisplayJournal()
