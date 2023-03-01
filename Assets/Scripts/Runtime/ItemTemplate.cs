@@ -58,7 +58,7 @@ public class ItemTemplate : MonoBehaviour
     // Picking up/selecting item
    public Item GetItem() {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupBerrySound, this.transform.position);
-    return item;
+        return item;
    }
 
    public void DestroyItemTemplate() {
